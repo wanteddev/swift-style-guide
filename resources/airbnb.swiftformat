@@ -1,0 +1,9 @@
+# options
+--self remove # redundantSelf
+--importgrouping testable-bottom # sortedImports
+--commas always # trailingCommas
+--trimwhitespace always # trailingSpace
+--swiftversion 5.1
+
+# rules
+--rules redundantParens,redundantReturn,redundantSelf,sortedImports,strongifiedSelf,trailingCommas,trailingSpace
