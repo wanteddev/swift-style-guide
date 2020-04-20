@@ -1853,7 +1853,7 @@ import Quick
 
 ## References
 
-[Airbnb Swift Style Guide](https://swift.org/documentation/api-design-guidelines/)
+[Airbnb Swift Style Guide](https://github.com/airbnb/swift)
 
 [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
 
