@@ -616,15 +616,6 @@ class AIRAccount {
 
 </details>
 
-#### 테스트코드는 Given-When-Then 패턴을 따른다.
-
-<details>
-
-[마틴파울러의 GivenWhenThen](https://martinfowler.com/bliki/GivenWhenThen.html)
-구글링으로 여러 번역본을 찾을 수 있습니다.
-
-</details>
-
 **[⬆ back to top](#table-of-contents)**
 
 ## Style
@@ -1649,6 +1640,15 @@ default:
   ```
   
   </details>
+  
+#### 테스트코드는 Given-When-Then 패턴을 따른다.
+
+<details>
+
+[마틴파울러의 GivenWhenThen](https://martinfowler.com/bliki/GivenWhenThen.html)
+구글링으로 여러 번역본을 찾을 수 있습니다.
+
+</details>
   
 ### Objects
 
