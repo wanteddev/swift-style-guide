@@ -811,7 +811,7 @@ let squares = userCounts.map() { $0 * $0 }
 
 ### Closures
 
-#### 매개변수와 리턴 타입이 없는 closure 정의시에는 () -> Void를 사용한다.[![SwiftLint: void_return](https://img.shields.io/badge/SwiftLint-void__return-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#void-return)
+#### 매개변수와 리턴 타입이 없는 closure 정의시에는 `() -> Void`를 사용한다.[![SwiftLint: void_return](https://img.shields.io/badge/SwiftLint-void__return-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#void-return)
 
   <details>
 
@@ -944,7 +944,7 @@ someAsyncThing() { argument1, argument2, argument3 in
 
   </details>
 
-#### Array<T>와 Dictionary<T: U> 보다는 [T], [T: U]를 사용합니다.
+#### Array<T>와 Dictionary<T: U> 보다는 [T], [T: U]를 사용한다.
  
  <details>
 
@@ -1836,7 +1836,7 @@ import Quick
 
 ##### 왜?
 
-+ 는 짧지만 명확하게 의미를 전달한다. 확장되는 코드를 논리적인 기능 block으로 나눌 수 있으며, 가독성과 유지보수성이 좋아진다. 찾는 항목에 대한 검색 범위를 좁히는 데 도움이 된다. 
+`+` 는 짧지만 명확하게 의미를 전달한다. 확장되는 코드를 논리적인 기능 block으로 나눌 수 있으며, 가독성과 유지보수성이 좋아진다. 찾는 항목에 대한 검색 범위를 좁히는 데 도움이 된다. 
 
  좋은 예:
 
