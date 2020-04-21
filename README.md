@@ -616,15 +616,6 @@ class AIRAccount {
 
 </details>
 
-#### 테스트코드는 Given-When-Then 패턴을 따른다.
-
-<details>
-
-[마틴파울러의 GivenWhenThen](https://martinfowler.com/bliki/GivenWhenThen.html)
-구글링으로 여러 번역본을 찾을 수 있습니다.
-
-</details>
-
 **[⬆ back to top](#table-of-contents)**
 
 ## Style
@@ -1251,7 +1242,7 @@ class MyClass {
 
 #### 여러 종료지점에서 정리 코드가 필요한 경우 defer block을 사용하는 것을 고려한다.
 
-#### 접근 제어는 가능한 한 엄격한 수준이어야 한다.**
+#### 접근 제어는 가능한 한 엄격한 수준이어야 한다.
 
 그런 행동이 필요하지 않는 한 `open`보다는 `public`, `fileprivate`보다는 `private` 쪽을 선호한다.
 
@@ -1423,7 +1414,7 @@ enum ErrorType: String {
   case warning
 }
 
-/// 이것은 logging service에서 사용된다. 명시적은 값은 바이너리 전역에 걸쳐 일관성을 보장한다. 
+/// 이것은 logging service에서 사용된다. 명시적인 값은 바이너리 전역에 걸쳐 일관성을 보장한다. 
 // swiftlint:disable redundant_string_enum_value
 enum UserType: String {
   case owner = "owner"
@@ -1553,8 +1544,8 @@ class를 재정의해야하는 경우에는 `final` 키워드를 생략합니다
   
   > 호출할 class 구현체를 선택하는 과정은 런타임 단계에서 수행되며, 이는 dynamic dispatch로 알려져있다.
   > 런타임 오버헤드의 일정부분은 클래스 상속을 사용하는 것과 관련이 있다.
-  > final 키워드는 메쏘드나 함수의 경우 오버라이드 할 수 없게 하고, 클래스는 서브클래싱 할 수 없게 한다. 
-  > 이 키워드는 런타임에서 메써드나 속성을 직접 호출할 수 있게 해줄 것이며, 약간의 성능 향상을 가져온다.
+  > final 키워드는 메서드나 함수의 경우 오버라이드 할 수 없게 하고, 클래스는 서브클래싱 할 수 없게 한다. 
+  > 이 키워드는 런타임에서 메서드나 속성을 직접 호출할 수 있게 해줄 것이며, 약간의 성능 향상을 가져온다.
   > _스위프트 4 프로토콜지향 프로그래밍 3/e 에서 요약 인용_
    
    좋은 예:
@@ -1580,7 +1571,7 @@ class를 재정의해야하는 경우에는 `final` 키워드를 생략합니다
   <details>
 
   ##### 왜?
-  모든 case를 열거하는 것은 개발자와 검토자가 새로운 `case`가 추가될 때 모든 `switch` 문장의 정확성을 고려하도록 해줍니다. 
+  모든 case를 열거하는 것은 개발자와 검토자가 새로운 `case`가 추가될 때 모든 `switch` 문장의 정확성을 고려하도록 해준다. 
 
 좋은 예:
 
@@ -1649,6 +1640,15 @@ default:
   ```
   
   </details>
+  
+#### 테스트코드는 Given-When-Then 패턴을 따른다.
+
+<details>
+
+[마틴파울러의 GivenWhenThen](https://martinfowler.com/bliki/GivenWhenThen.html)
+구글링으로 여러 번역본을 찾을 수 있습니다.
+
+</details>
   
 ### Objects
 
