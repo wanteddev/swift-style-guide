@@ -1664,6 +1664,37 @@ default:
 디미터 법칙을 위반한 코드를 수정하는 일반적인 방법은 `묻지 말고 시켜라`를 따르는 것이다. 객체에게 내부 구조를 묻는 대신 직접 자신의 책임을 수행하도록 시키는 것이다. 
 이 두 스타일을 따르면 자연스럽게 자율적인 객체로 구성된 유연한 협력을 얻게 된다. 
 
+좋은 예:
+
+ ```swift
+public class ReservationAgency {
+  func func reserve(screening: Screening, customer: Customer, audienceCount: Int) -> Reservation  {
+    let fee = screening.calculateFee(audienceCount)
+    Reservation(customer, screening, fee, audienceCount);
+  }
+}
+```
+
+나쁜 예:
+
+ ```swift
+public class ReservationAgency {
+  func reserve(screening: Screening, customer: Customer, audienceCount: Int) -> Reservation {
+    let movie: Movie = screening.movie
+    var fee: Int = 0
+
+    if movie.isDiscountable {
+      let discountAmount = movie.discountAmount
+      fee = (movie.fee - discountAmount) * audienceCount
+    } else {
+      fee = movie.fee * audienceCount
+    }
+
+    return Reservation(customer, screening, fee, audienceCount);
+  }
+}
+```
+
 _예외: self 속성의 컬렉션 요소에는 메시지를 전송해도 좋다._
 
 _예외: 디미터법칙은 하나의 점을 강제하는 규칙이 아니다_
@@ -1677,11 +1708,50 @@ _예외: 디미터법칙은 하나의 점을 강제하는 규칙이 아니다_
 
 </details>
 
-#### 객체의 상태에 관해 묻지 않고 원하는 것을 시킨다. 
+#### 객체의 상태는 숨기고 행동만 외부에 공개한다.  
+속성은 private로 만들어서 직접 접근하지 않고, 메서드만 사용한다. 
 
 <details>
    
-묻지 말고 시켜라 (Tell, Don't Ask) 원칙이다. 이렇게 하면 자연스럽게 관련 정보를 가장 잘 알고 있는 객체에게 책임을 할당할 수 있다.  외부에서 객체의 상태를 기반으로 결정을 내리게 되면 캡슐화를 위반하게 된다.
+> 묻지 말고 시켜라 (Tell, Don't Ask) 원칙. 객체의 상태에 관해 묻지 않고 원하는 것을 시킨다. 
+   
+이렇게 하면 객체에 대해서 알아야할 정보를 최소화할 수 있다. 그리고, 자연스럽게 관련 정보를 가장 잘 알고 있는 객체에게 책임을 할당할 수 있다.  외부에서 객체의 상태를 기반으로 결정을 내리게 되면 캡슐화를 위반하게 된다.
+
+예외:  
+1. 묻는 것 이외에는 다른 방법이 존재하지 않는 경우도 있다.
+객체에게  묻지않고 직접 그 일을 하도록 하는 경우 응집도는 높아질 수 있지만, 본질적이지 않는 책임을 떠안게 되어 객체간 결합도가 높아질수 있다. 
+2. 물으려는 객체가 정말로 데이터인 경우도 있다. 
+3. 자료구조라면 당연히 내부를 노출해야하므로 디미터 법칙을 적용할 필요가 없다.
+
+속성에 직접 접근해야한다면 readonly로 만들어서 외부에서 직접 수정할 수 없게 한다. 속성값 수정이 필요하면 메서드를 통해서만 가능하게한다. 
+
+좋은 예:
+
+ ```swift
+struct Movie {
+  var isDiscountable: Bool {
+    true
+  }
+  
+  var discountAmount: Int {
+    3000
+  }
+  
+  var fee: Int {
+    10000
+  }
+}
+```
+
+나쁜 예:
+
+ ```swift
+struct Movie {
+  var isDiscountable: Bool = true
+  var discountAmount: Int = 3000
+  var fee: Int = 10000
+}
+```
 
 </details>
 
@@ -1692,6 +1762,38 @@ _예외: 디미터법칙은 하나의 점을 강제하는 규칙이 아니다_
 * '어떻게'는 내부 구현을 설명하며, 설계 시점에 내부 구현에 대해 고민할 수 밖에 없다. 결과와 목적만을 포함하도록 타입과 오퍼레이션의 이름을 부여한다. 
 * 가장 추상적인 이름을 붙인다. Tip: 매우 다른 두번 째 구현을 상상한다. 그리고, 해당 메서드에 동일한 이름을 붙인다고 상상한다. 가장 추상적인 이름을 메서드에 붙이게 될 것이다. 
 
+좋은 예:
+
+ ```swift
+public class TicketSeller {
+  private var ticketOffice: TicketOffice
+  
+  func sell(to audience: Audience) {
+    audience.buyTicket(from:ticketOffice.ticket)
+  }
+}
+
+public class PeriodCondition {
+  func isSatisfied(_ screening: Screening) { ... }
+}
+```
+
+나쁜 예:
+
+ ```swift
+public class TicketSeller {
+  private var ticketOffice: TicketOffice
+  
+  func setTicket(to audience: Audience) {
+    audience.setTicket(from:ticketOffice.ticket)
+  }
+}
+
+public class PeriodCondition {
+  func isSatisfiedByPeriod(_ screening: Screening) { ... }
+}
+```
+
 </details>
 
 #### 명령과 쿼리를 분리한다. 
@@ -1699,11 +1801,11 @@ _예외: 디미터법칙은 하나의 점을 강제하는 규칙이 아니다_
 
 <details>
    
-> 루틴은 어떤 절차를 묶어 호출 가능하도록 이름을 부여한 기능모듈이다.
-> 루틴은 프로시저와 함수로 나뉜다. 
-> 프로시저는 사이드이펙트를 발생시킬 수 있지만 값을 반환할 수 없다.
-> 함수는 사이드이펙트를 발생시킬 수 없지만 값을 반환할 수 없다.
-> 명령 : 쿼리 = 프로시저 : 함수 
+> `루틴`은 어떤 절차를 묶어 호출 가능하도록 이름을 부여한 기능모듈이다.
+> `루틴`은 `프로시저`와 `함수`로 나뉜다. 
+> `프로시저`는 사이드이펙트를 발생시킬 수 있지만 값을 반환할 수 없다.
+> `함수`는 사이드이펙트를 발생시킬 수 없지만 값을 반환할 수 없다.
+> 명령 : 쿼리 = `프로시저` : `함수` 
 
 * 분리로 인한 긍정적인 효과
     * 쿼리의 순서를 자유롭게 변경할 수 있다.
