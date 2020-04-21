@@ -342,7 +342,7 @@ _예외: 동일한 이름의 속성이나 메서드가 더 높은 액세스 수�
 
 좋은 예:
 
-  - Type erasure
+* Type erasure
   
   ```swift
   public final class AnyRequester<ModelType>: Requester {
@@ -368,7 +368,7 @@ _예외: 동일한 이름의 속성이나 메서드가 더 높은 액세스 수�
   }
   ```
 
-- 더 구체적인 타입을 사용하여 덜 구체적인 타입을 backing한다.
+* 더 구체적인 타입을 사용하여 덜 구체적인 타입을 backing한다.
 
   ```swift
   final class ExperiencesViewController: UIViewController {
@@ -524,7 +524,7 @@ class ExperiencesViewController {
 
 ```swift
 class Account {
-// ...
+  // ...
 }
 ```
 
@@ -532,7 +532,7 @@ class Account {
 
 ```swift
 class AIRAccount {
-// ...
+  // ...
 }
 ```
 
@@ -830,6 +830,7 @@ let squares = userCounts.map() { $0 * $0 }
 <details>
 
 ##### 왜?
+
 어떤 매개변수가 사용되고 어떤 매개변수가 사용되지 않는지 명확히 함으로써 closure를 읽을 때 필요한 인지 오버헤드가 감소한다.
 
 좋은 예:
@@ -845,28 +846,6 @@ someAsyncThing() { _, _, argument3 in
  ```swift
 someAsyncThing() { argument1, argument2, argument3 in
   print(argument3)
-}
-```
-
-</details>
-
-#### closure 정의시 매개변수에는 괄호를 사용하지 않는다. 
-
-<details>
-
- 좋은 예:
-
- ```swift
-{ operaion, responseObject in
-  // doSomething()
-}
-```
-
- 나쁜 예:
-
- ```swift
-{ (operaion, responseObject) in
-  // doSomething()
 }
 ```
 
@@ -919,7 +898,7 @@ someAsyncThing() { argument1, argument2, argument3 in
 
    ```swift
   var diameter: Double {
-  return radius * 2
+    return radius * 2
   }
    ```
 
@@ -968,9 +947,10 @@ someAsyncThing() { argument1, argument2, argument3 in
 ##### 왜?
 
 !는  런타임시 크래시의 원인이 될 수 있다.
-그러나, 라이프타임이 UI 라이프사이클안에 있는 사용자 인터페이스 객체는 !를 사용할 수 있다. 왜냐하면 그것들은 no-nil이 보장되기 때문이다.
-XIB 파일이나 스토리보드의 객체에 연결된   @IBOutlet 속성, 외부에서 주입되는 속성 등 그러한 속성을 ?로 만드는 것은 사용자가 포장을 풀기에는 너무 많은 부담을 줄 수 있다. 
-또한 !는 단위테스트에서 허용된다. 이는 위의 UI 개체 시나리오와 유사한 이유 때문에—테스트 fixture의 수명은 종종 테스트의 초기화함수가 아니라 테스트의 setUp() 메서드에서 시작하여 각 테스트를 실행하기 전에 재설정할 수 있다.
+* 그러나, 라이프타임이 UI 라이프사이클안에 있는 사용자 인터페이스 객체는 !를 사용할 수 있다. 왜냐하면 그것들은 no-nil이 보장되기 때문이다.
+    * XIB 파일이나 스토리보드의 객체에 연결된   @IBOutlet 속성, 외부에서 주입되는 속성 등 그러한 속성을 ?로 만드는 것은 사용자가 포장을 풀기에는 너무 많은 부담을 줄 수 있다. 
+* 또한 !는 단위테스트에서 허용된다. 이는 위의 UI 개체 시나리오와 유사한 이유 때문이다. 
+    * 테스트 fixture의 수명은 종종 테스트의 초기화함수가 아니라 테스트의 setUp() 메서드에서 시작하여 각 테스트를 실행하기 전에 재설정할 수 있다.
 
 </details>
 
@@ -980,7 +960,7 @@ XIB 파일이나 스토리보드의 객체에 연결된   @IBOutlet 속성, 외�
 
 ##### 왜?
 
- !는  런타임시 크래시의 원인이 될 수 있습니다.
+ !는  런타임시 크래시의 원인이 될 수 있다.
  
 </details>
 
@@ -1169,6 +1149,7 @@ class MyClass {
   <details>
 
   ##### 왜?
+  
   모든 `guard` 문구를 상단에 모아놓는 것이 비즈니스 로직과 섞일때 code block에 대해 추론하는 것이 더 쉽다.
 
   </details>
@@ -1273,40 +1254,40 @@ _예외: static 지정자나  @IBAction, @IBOutlet, @discardableResult 같은 at
 #### 최상위 수준 타입, 함수, 변수에 명시적으로 접근 제어를 지정한다.
 하지만, 타입 정의 내에서는 같은 수준의 접근제어를 생략한다. 
 
-  <details>
+<details>
 
-  ##### 왜?
-  
-  명시적으로 표시하게 되면 항상 신중하게 결정하게 된다. 정의 내에서 동일한 접근 제어 지정자를 재사용하는 것은 중복이며, 일반적으로 기본값이 합당하다.  
+##### 왜?
 
-  좋은 예:
+명시적으로 표시하게 되면 항상 신중하게 결정하게 된다. 정의 내에서 동일한 접근 제어 지정자를 재사용하는 것은 중복이며, 일반적으로 기본값이 합당하다.  
 
-    ```swift
-    puplic struct Book {}
-    internal apiKey : String
-    private func change(options: [Option]) {}
+좋은 예:
 
-    public class ImageDownloader {
-        var links = ImageLinks()
-        private var queue = OperationQueue()
-    }
-    ```
+```swift
+puplic struct Book {}
+internal apiKey : String
+private func change(options: [Option]) {}
+
+public class ImageDownloader {
+  var links = ImageLinks()
+  private var queue = OperationQueue()
+}
+```
 
 
-  나쁜 예:
+나쁜 예:
 
-    ```swift
-    struct Book {}
-    apiKey : String
-    func change(options: [Option]) {}
+```swift
+struct Book {}
+apiKey : String
+func change(options: [Option]) {}
 
-    public class ImageDownloader {
-        public var links = ImageLinks()
-        private var queue = OperationQueue()
-    }
-    ```
+public class ImageDownloader {
+  public var links = ImageLinks()
+  private var queue = OperationQueue()
+}
+```
 
-  </details>
+</details>
 
 #### 가능한 한 global functions를 정의하지 않는다.
 타입 정의안에서 method를 정의하는 것을 선호한다.
@@ -1538,39 +1519,40 @@ class Fruit {
 #### class 는 기본적으로 `final`로 정의한다.
 class를 재정의해야하는 경우에는 `final` 키워드를 생략합니다.
 
-  <details>
-  
-  ##### 왜?
-  
-  > 호출할 class 구현체를 선택하는 과정은 런타임 단계에서 수행되며, 이는 dynamic dispatch로 알려져있다.
-  > 런타임 오버헤드의 일정부분은 클래스 상속을 사용하는 것과 관련이 있다.
-  > final 키워드는 메서드나 함수의 경우 오버라이드 할 수 없게 하고, 클래스는 서브클래싱 할 수 없게 한다. 
-  > 이 키워드는 런타임에서 메서드나 속성을 직접 호출할 수 있게 해줄 것이며, 약간의 성능 향상을 가져온다.
-  > _스위프트 4 프로토콜지향 프로그래밍 3/e 에서 요약 인용_
-   
-   좋은 예:
-   
-    ```swift
-    final class SettingsRepository {
-      // ...
-    }
-    ```
-   
-   나쁜 예:
+<details>
 
-    ```swift
-    class SettingsRepository {
+##### 왜?
+
+> 호출할 class 구현체를 선택하는 과정은 런타임 단계에서 수행되며, 이는 dynamic dispatch로 알려져있다.
+> 런타임 오버헤드의 일정부분은 클래스 상속을 사용하는 것과 관련이 있다.
+> final 키워드는 메서드나 함수의 경우 오버라이드 할 수 없게 하고, 클래스는 서브클래싱 할 수 없게 한다. 
+> 이 키워드는 런타임에서 메서드나 속성을 직접 호출할 수 있게 해줄 것이며, 약간의 성능 향상을 가져온다.
+> _스위프트 4 프로토콜지향 프로그래밍 3/e 에서 요약 인용_
+ 
+ 좋은 예:
+ 
+  ```swift
+  final class SettingsRepository {
     // ...
-    }
-    ```
+  }
+  ```
+ 
+ 나쁜 예:
 
-  </details>
+  ```swift
+  class SettingsRepository {
+    // ...
+  }
+  ```
+
+</details>
 
 #### switch 문에서 `enum`값 에 대해  `default` case 사용하지 않는다.
 
   <details>
 
   ##### 왜?
+  
   모든 case를 열거하는 것은 개발자와 검토자가 새로운 `case`가 추가될 때 모든 `switch` 문장의 정확성을 고려하도록 해준다. 
 
 좋은 예:
@@ -1657,7 +1639,9 @@ default:
 #### 디미터 법칙을 따른다. 
 
 <details>
-   
+
+##### 왜?
+
 > Law of Demeter. 낯선자에게 말하지 말고, 오직 인접한 이웃하고만 말하라.
 
 디미터 법칙을 따르는 코드는 메시지 전송자가 수신자의 내부 구현에 결합되지 않는다.  
@@ -1712,9 +1696,11 @@ _예외: 디미터법칙은 하나의 점을 강제하는 규칙이 아니다_
 속성은 private로 만들어서 직접 접근하지 않고, 메서드만 사용한다. 
 
 <details>
-   
+
+##### 왜?
+
 > 묻지 말고 시켜라 (Tell, Don't Ask) 원칙. 객체의 상태에 관해 묻지 않고 원하는 것을 시킨다. 
-   
+
 이렇게 하면 객체에 대해서 알아야할 정보를 최소화할 수 있다. 그리고, 자연스럽게 관련 정보를 가장 잘 알고 있는 객체에게 책임을 할당할 수 있다.  외부에서 객체의 상태를 기반으로 결정을 내리게 되면 캡슐화를 위반하게 된다.
 
 예외:  
@@ -1758,7 +1744,9 @@ struct Movie {
 #### 메서드의 이름은 '어떻게'가 아니라 클라이언트가 '무엇'을 원하는지를 드러내도록 짓는다.  
 
 <details>
-   
+
+##### 왜?
+
 * '어떻게'는 내부 구현을 설명하며, 설계 시점에 내부 구현에 대해 고민할 수 밖에 없다. 결과와 목적만을 포함하도록 타입과 오퍼레이션의 이름을 부여한다. 
 * 가장 추상적인 이름을 붙인다. Tip: 매우 다른 두번 째 구현을 상상한다. 그리고, 해당 메서드에 동일한 이름을 붙인다고 상상한다. 가장 추상적인 이름을 메서드에 붙이게 될 것이다. 
 
@@ -1800,7 +1788,9 @@ public class PeriodCondition {
 어떤 오퍼레이션도 명령이 동시에 쿼리가 되게 하지 않는다. 
 
 <details>
-   
+
+##### 왜?
+
 > `루틴`은 어떤 절차를 묶어 호출 가능하도록 이름을 부여한 기능모듈이다.
 > `루틴`은 `프로시저`와 `함수`로 나뉜다. 
 > `프로시저`는 사이드이펙트를 발생시킬 수 있지만 값을 반환할 수 없다.
@@ -1818,7 +1808,7 @@ public class PeriodCondition {
   
 ### Types
   
-#### 타입의 특성을 고려하여 class와 structure를 신중하게 선택한다.
+#### 타입의 특성을 고려하여  `class `와  `struct`를 신중하게 선택한다.
   
   <details>
   
