@@ -1849,13 +1849,15 @@ public class PeriodCondition {
   }
 
   // MARK: - UITableViewDataSource
+  
   extension MyViewController: UITableViewDataSource {
    // table view data source methods
    }
 
   // MARK: - UIScrollViewDelegate
+  
   extension MyViewController: UIScrollViewDelegate {
-  // scroll view delegate methods
+    // scroll view delegate methods
   }
   ```
 
