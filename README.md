@@ -18,6 +18,7 @@
     * [![Swift:5.1](https://img.shields.io/badge/Swift-5.1-orange)]()
 * 모든 규칙을 구체화하기 위해 노력한다.
 * 예외사항은 거의 두지 않아야 하고, 있더라도 정당성이 높아야한다. 
+* develop브랜치에서 가이드를 수정하고 master로  PR을 보내서 리뷰를 통과하면 반영한다. 
 
 ## Table of Contents
 
