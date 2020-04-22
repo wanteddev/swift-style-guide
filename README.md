@@ -1548,7 +1548,7 @@ class Fruit {
 
 </details>
 
-#### switch 문에서 `enum`값 에 대해  `default` case 사용하지 않는다.
+#### `switch` 문에서 `enum`값 에 대해 가급적이면 `default` 케이스를 사용하지 않는다.
 
   <details>
 
