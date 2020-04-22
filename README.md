@@ -989,7 +989,7 @@ textContainer?.textLabel?.setNeedsDisplay()
  ```swift
 var thing: Thing?
 
-if let _ = thing {
+if nil != thing {
   doThing()
 }
 ```
