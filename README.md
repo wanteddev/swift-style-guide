@@ -406,7 +406,7 @@ class URLValidator {
 }
 
 let urlValidator = URLValidator()
-let isProfile = urlValidator.isProfileUrl(urlToTest, userID: idOfUser)
+let isProfile = urlValidator.isProfileURL(urlToTest, userID: idOfUser)
 ```
 
 나쁜 예:
