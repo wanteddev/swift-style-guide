@@ -12,7 +12,7 @@ Class는 Class Block, IBAction Block, Public Property Block, Public Method Block
 final class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     private let refreshControl = UIRefreshControl()
-    private var somthingHelper: SomthingHelperProtocol?
+    private var somthingHelper: SomethingHelperProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ extension ViewController {
 // MARK: - Public Property
 
 extension ViewController {
-    public var isLogin: String { 
+    var isLogin: String { 
         // ...
     }
 }
@@ -51,7 +51,7 @@ extension ViewController {
 // MARK: - Public Method
 
 extension ViewController {
-    public func publicMethod() {
+    func publicMethod() {
         // ...
     }
 }
@@ -84,9 +84,9 @@ extension ViewController {
 ### Protocol Block
 ```
 
-// MARK: - SomthingHelperProtocol
+// MARK: - SomethingHelperProtocol
 
-extension ViewController: SomthingHelperProtocol {
+extension ViewController: SomethingHelperProtocol {
     func test() {
         // ...
     }
@@ -128,19 +128,19 @@ extension User {
 }
 
 ```
-### Public Method
+### Public Method Block
 ```
 
 // MARK: - Public Method
 
 extension User {
-    public func hasCompany() -> Bool {
+    func hasCompany() -> Bool {
         return nil != company
     }
 }
 
 ```
-### Private Method
+### Private Method Block
 ```
 
 // MARK: - Private Method
@@ -210,19 +210,8 @@ extension Region {
 // MARK: - Private Property
 
 extension Region {
-    private var description: String {
-        switch self {
-        case .kr:
-            return "KR"
-        case .jp:
-            return "JP"
-        case .sg:
-            return "SG"
-        case .hk:
-            return "HK"
-        case .tw:
-            return "TW"
-        }
+    private var isChanged: Bool {
+        // ...
     }
 }
 
@@ -233,7 +222,7 @@ extension Region {
 // MARK: - Private Method
 
 extension Region {
-    func imageName() {
+    private func imageName() {
         // ...
     }
 }
