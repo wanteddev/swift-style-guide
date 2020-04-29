@@ -18,6 +18,7 @@
     * [![Swift:5.1](https://img.shields.io/badge/Swift-5.1-orange)]()
 * 모든 규칙을 구체화하기 위해 노력한다.
 * 예외사항은 거의 두지 않아야 하고, 있더라도 정당성이 높아야한다. 
+* develop브랜치에서 가이드를 수정하고 master로  PR을 보내서 리뷰를 통과하면 반영한다. 
 
 ## Table of Contents
 
@@ -45,7 +46,7 @@
 
 #### 한 줄은 최대 100자를 넘지 않아야한다.[![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash)
 
-#### 들여쓰기에는 2개의 space를 사용한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash)
+#### 들여쓰기에는 4개의 space를 사용한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash)
 
   <details>
 
@@ -333,7 +334,7 @@ _Tip: [이 스크립트](resources/xcode_settings.bash)를 실행하여 Xcode에
   `````
   </details>
 
-_예외: 동일한 이름의 속성이나 메서드가 더 높은 액세스 수준을 가진 경우, private 속성에 밑줄 접두사를 붙일 수 있다._
+_예외: 동일한 이름의 속성이나 메서드가 더 높은 액세스 수준을 가진 경우, `private` 속성에 밑줄 접두사를 붙일 수 있다._
 
   <details>
 
@@ -518,7 +519,7 @@ class ExperiencesViewController {
 <details>
 
 ####  왜?
-이름간 충돌을 피하기 위한 방식이었는데 Swift에서 더 이상 필요하지 않다. 스위프트의 타입은 해당 타입을 포함하는 모듈에 의해 자동으로 네임스페이스가 지정되며, NS와 같은 클래스 접두사를 추가해서는 안 된다. 서로 다른 모듈의 두 이름이 충돌하는 경우 유형 이름과 모듈 이름을 접두사로 연결하여 모호한 정보를 해제할 수 있다. 단, 혼동 가능성이 있을 때만 모듈 이름을 지정한다. 
+이름간 충돌을 피하기 위한 방식이었는데 Swift에서 더 이상 필요하지 않다. 스위프트의 타입은 해당 타입을 포함하는 모듈에 의해 자동으로 네임스페이스가 지정되며, `NS`와 같은 클래스 접두사를 추가해서는 안 된다. 서로 다른 모듈의 두 이름이 충돌하는 경우 유형 이름과 모듈 이름을 접두사로 연결하여 모호한 정보를 해제할 수 있다. 단, 혼동 가능성이 있을 때만 모듈 이름을 지정한다. 
 
 좋은 예:
 
@@ -576,8 +577,8 @@ class AIRAccount {
   ```
   </details>
 
-#### 뷰(UIView 및 하위 타입)타입 변수의 이름을 지을 때 타입 이름을 뒤에 붙여준다.
-타입 이름을 줄이지 않는다. UICollectionViewCell, UITableViewCell 의 경우는 너무 길기 때문에 Cell만 활용한다. 
+#### 뷰(`UIView` 및 하위 타입)타입 변수의 이름을 지을 때 타입 이름을 뒤에 붙여준다.
+타입 이름을 줄이지 않는다. `UICollectionViewCell`, `UITableViewCell` 의 경우는 너무 길기 때문에 `Cell`만 활용한다. 
 
 <details>
 
@@ -782,7 +783,7 @@ let squares = userCounts.map() { $0 * $0 }
 
   </details>
 
-#### NSRange 등의 경우 Make() 함수 대신 생성자를 사용한다.[![SwiftLint: legacy_constructor](https://img.shields.io/badge/SwiftLint-legacy__constructor-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#legacy-constructor)
+#### `NSRange` 등의 경우 `Make()` 함수 대신 생성자를 사용한다.[![SwiftLint: legacy_constructor](https://img.shields.io/badge/SwiftLint-legacy__constructor-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#legacy-constructor)
 
   <details>
   
@@ -914,7 +915,7 @@ someAsyncThing() { argument1, argument2, argument3 in
 
   </details>
 
-#### Array<T>와 Dictionary<T: U> 보다는 [T], [T: U]를 사용한다.
+#### `Array<T>`와 `Dictionary<T: U>` 보다는 `[T]`, `[T: U]`를 사용한다.
  
  <details>
 
@@ -937,20 +938,20 @@ someAsyncThing() { argument1, argument2, argument3 in
 
 ### Optionals
 > ? 는 regular optionals 을 의미한다.  
->  ! 는  implicitly unwrapped optionals (암묵적으로 포장이 풀리는 옵셔널)을 의미한다.
+>  ! 는 implicitly unwrapped optionals (암묵적으로 포장이 풀리는 옵셔널)을 의미한다.
 > 가이드에서는 ? 와 ! 로 대체하여 표현한다. 
 
-#### 가능한 한 ?로 선언한다. 사용전 반드시 초기화되는 경우에만  ! 로 선언한다. 
+#### 가능한 한 ? 로 선언한다. 사용전 반드시 초기화되는 경우에만  ! 로 선언한다. 
 
 <details>
 
 ##### 왜?
 
-!는  런타임시 크래시의 원인이 될 수 있다.
-* 그러나, 라이프타임이 UI 라이프사이클안에 있는 사용자 인터페이스 객체는 !를 사용할 수 있다. 왜냐하면 그것들은 no-nil이 보장되기 때문이다.
-    * XIB 파일이나 스토리보드의 객체에 연결된   @IBOutlet 속성, 외부에서 주입되는 속성 등 그러한 속성을 ?로 만드는 것은 사용자가 포장을 풀기에는 너무 많은 부담을 줄 수 있다. 
-* 또한 !는 단위테스트에서 허용된다. 이는 위의 UI 개체 시나리오와 유사한 이유 때문이다. 
-    * 테스트 fixture의 수명은 종종 테스트의 초기화함수가 아니라 테스트의 setUp() 메서드에서 시작하여 각 테스트를 실행하기 전에 재설정할 수 있다.
+! 는  런타임시 크래시의 원인이 될 수 있다.
+* 그러나, 라이프타임이 UI 라이프사이클안에 있는 사용자 인터페이스 객체는 ! 를 사용할 수 있다. 왜냐하면 그것들은 no-nil이 보장되기 때문이다.
+    * XIB 파일이나 스토리보드의 객체에 연결된  `@IBOutlet` 속성, 외부에서 주입되는 속성 등 그러한 속성을 ? 로 만드는 것은 사용자가 포장을 풀기에는 너무 많은 부담을 줄 수 있다. 
+* 또한 ! 는 단위테스트에서 허용된다. 이는 위의 UI 개체 시나리오와 유사한 이유 때문이다. 
+    * 테스트 fixture의 수명은 종종 테스트의 초기화함수가 아니라 테스트의 `setUp()` 메서드에서 시작하여 각 테스트를 실행하기 전에 재설정할 수 있다.
 
 </details>
 
@@ -960,7 +961,7 @@ someAsyncThing() { argument1, argument2, argument3 in
 
 ##### 왜?
 
- !는  런타임시 크래시의 원인이 될 수 있다.
+ ! 는  런타임시 크래시의 원인이 될 수 있다.
  
 </details>
 
@@ -1150,17 +1151,17 @@ class MyClass {
 
   ##### 왜?
   
-  모든 `guard` 문구를 상단에 모아놓는 것이 비즈니스 로직과 섞일때 code block에 대해 추론하는 것이 더 쉽다.
+  모든 `guard` 문을 상단에 모아놓는 것이 비즈니스 로직과 섞일때 code block에 대해 추론하는 것이 더 쉽다.
 
   </details>
 
-#### if 문 보다는 guard 문을 사용하여 중첩을 최소화한다.
+#### `if` 문 보다는 `guard` 문을 사용하여 중첩을 최소화한다.
 
  <details>
 
  ##### 왜?
 
- 탈출 조건에서 throws나 return 문 등을 실행하거나 옵셔널 바인딩을 해야할 때 guard 문을 사용하면 중첩도를 줄여서 가독성과 유지보수성을 높일 수 있다.   
+ 탈출 조건에서 `throws`나 `return` 문 등을 실행하거나 옵셔널 바인딩을 해야할 때 `guard` 문을 사용하면 중첩도를 줄여서 가독성과 유지보수성을 높일 수 있다.   
 
   좋은 예:
 
@@ -1221,7 +1222,7 @@ class MyClass {
 
  </details>
 
-#### 여러 종료지점에서 정리 코드가 필요한 경우 defer block을 사용하는 것을 고려한다.
+#### 여러 종료지점에서 정리 코드가 필요한 경우 `defer` block을 사용하는 것을 고려한다.
 
 #### 접근 제어는 가능한 한 엄격한 수준이어야 한다.
 
@@ -1249,7 +1250,7 @@ class TimeMachine {
 
 </details>
 
-_예외: static 지정자나  @IBAction, @IBOutlet, @discardableResult 같은 attributes_
+_예외: `static` 지정자나  `@IBAction`, `@IBOutlet`, `@discardableResult` 같은 attributes_
 
 #### 최상위 수준 타입, 함수, 변수에 명시적으로 접근 제어를 지정한다.
 하지만, 타입 정의 내에서는 같은 수준의 접근제어를 생략한다. 
@@ -1289,14 +1290,14 @@ public class ImageDownloader {
 
 </details>
 
-#### 가능한 한 global functions를 정의하지 않는다.
-타입 정의안에서 method를 정의하는 것을 선호한다.
+#### 가능한 한 전역 함수를 정의하지 않는다.
+타입 정의안에서 메서드를 정의하는 것을 선호한다.
 
   <details>
 
   ##### 왜?
   
-  이것은 가독성에 도움이 된다. 더 빨리 찾을 수 있다.  global functions 는 특정 type 이나 인스턴스와 관련이 없을 때 가장 적절하다. 
+  이것은 가독성에 도움이 된다. 더 빨리 찾을 수 있다. 전역 함수는 특정 타입이나 인스턴스와 관련이 없을 때 가장 적절하다. 
 
 좋은 예:
 
@@ -1330,7 +1331,7 @@ func jump(person: Person) {
   </details>
 
 #### 상수가 `fileprivate`, `private`인 경우 파일의 최상위 레벨에 놓는 것을 선호한다.
-`public` 또는 `internal`인 경우 namespacing 을 위해 static 속성으로 정의한다.
+`public` 또는 `internal`인 경우 namespacing 을 위해 `static` 속성으로 정의한다.
 
   <details>
 
@@ -1352,14 +1353,14 @@ func jump(person: Person) {
 
   </details>
 
-#### `public` 또는 `internal` 상수 및 함수를 네임스페이스로 묶고 싶을 때는 case 없는 enum을 사용한다.
+#### `public` 또는 `internal` 상수 및 함수를 네임스페이스로 묶고 싶을 때는 `case` 없는 `enum`을 사용한다.
 네임스페이스 없이 전역 상수와 함수를 만들지 않는다. 명료함을 위해서라면 네임스페이스를 제한없이 중첩한다. 
   
   <details>
 
   ##### 왜?
   
-  case 없는 `enum`은 인스턴스로 만들 수 없기 때문에 순수한 네임스페이스로 잘 맞는다. 
+  `case` 없는 `enum`은 인스턴스로 만들 수 없기 때문에 순수한 네임스페이스로 잘 맞는다. 
 
 좋은 예:
 
@@ -1516,16 +1517,16 @@ class Fruit {
 
   </details>
 
-#### class 는 기본적으로 `final`로 정의한다.
-class를 재정의해야하는 경우에는 `final` 키워드를 생략합니다.
+#### 클래스는 기본적으로 `final`로 정의한다.
+클래스를 재정의해야하는 경우에는 `final` 키워드를 생략합니다.
 
 <details>
 
 ##### 왜?
 
-> 호출할 class 구현체를 선택하는 과정은 런타임 단계에서 수행되며, 이는 dynamic dispatch로 알려져있다.
+> 호출할 `class` 구현체를 선택하는 과정은 런타임 단계에서 수행되며, 이는 dynamic dispatch로 알려져있다.
 > 런타임 오버헤드의 일정부분은 클래스 상속을 사용하는 것과 관련이 있다.
-> final 키워드는 메서드나 함수의 경우 오버라이드 할 수 없게 하고, 클래스는 서브클래싱 할 수 없게 한다. 
+> `final` 키워드는 메서드나 함수의 경우 오버라이드 할 수 없게 하고, 클래스는 서브클래싱 할 수 없게 한다. 
 > 이 키워드는 런타임에서 메서드나 속성을 직접 호출할 수 있게 해줄 것이며, 약간의 성능 향상을 가져온다.
 > _스위프트 4 프로토콜지향 프로그래밍 3/e 에서 요약 인용_
  
@@ -1547,13 +1548,13 @@ class를 재정의해야하는 경우에는 `final` 키워드를 생략합니다
 
 </details>
 
-#### switch 문에서 `enum`값 에 대해  `default` case 사용하지 않는다.
+#### `switch` 문에서 `enum`값 에 대해 가급적이면 `default` 케이스를 사용하지 않는다.
 
   <details>
 
   ##### 왜?
   
-  모든 case를 열거하는 것은 개발자와 검토자가 새로운 `case`가 추가될 때 모든 `switch` 문장의 정확성을 고려하도록 해준다. 
+  모든 `case`를 열거하는 것은 개발자와 검토자가 새로운 `case`가 추가될 때 모든 `switch` 문장의 정확성을 고려하도록 해준다. 
 
 좋은 예:
 
@@ -1693,7 +1694,7 @@ _예외: 디미터법칙은 하나의 점을 강제하는 규칙이 아니다_
 </details>
 
 #### 객체의 상태는 숨기고 행동만 외부에 공개한다.  
-속성은 private로 만들어서 직접 접근하지 않고, 메서드만 사용한다. 
+속성은 `private`으로 만들어서 직접 접근하지 않고, 메서드만 사용한다. 
 
 <details>
 
@@ -1808,15 +1809,15 @@ public class PeriodCondition {
   
 ### Types
   
-#### 타입의 특성을 고려하여  `class `와  `struct`를 신중하게 선택한다.
+#### 타입의 특성을 고려하여 `class` 와 `struct`를 신중하게 선택한다.
   
   <details>
   
   ##### 왜?
   
-   struct는 value semantics를 가지고 있다. 정체성(identity)이 없는 것에는 struct를 사용한다. [a, b, c]를 포함하는 배열은 [a, b, c]를 포함하는 다른 배열과 실제로 동일하며 완전히 교환할 수 있다. 첫 번째 배열을 사용하든 두 번째 배열을 사용하든 상관없다. 왜냐하면 그것들은 정확히 같은 것을 나타내기 때문이다. 그렇기 때문에 배열은 struct이다.
+   `struct`는 value semantics를 가지고 있다. 정체성(identity)이 없는 것에는 `struct`를 사용한다. `[a, b, c]`를 포함하는 배열은 `[a, b, c]`를 포함하는 다른 배열과 실제로 동일하며 완전히 교환할 수 있다. 첫 번째 배열을 사용하든 두 번째 배열을 사용하든 상관없다. 왜냐하면 그것들은 정확히 같은 것을 나타내기 때문이다. 그렇기 때문에 배열은 `struct`이다.
   
-  class는 reference semantics를 가지고 있다. 정체성(identity)이나 특정한 라이프 사이클이 있는 것에 대해 class을 이용한다. 두 사람 객체는 서로 다르기 때문에 사람을 class로 모형화 할 것이다. 두 사람이 이름과 생년월일이 같다고 해서 같은 사람이 되는 것은 아니다. 그러나 1950년 3월 3일의 날짜는 1950년 3월 3일의 다른 날짜 객체와 같기 때문에 그 사람의 생년월일은 struct가 될 것이다. 날짜 자체는 정체성이 없다.
+  `class`는 reference semantics를 가지고 있다. 정체성(identity)이나 특정한 라이프 사이클이 있는 것에 대해 `class`를 이용한다. 두 사람 객체는 서로 다르기 때문에 사람을 `class`로 모형화 할 것이다. 두 사람이 이름과 생년월일이 같다고 해서 같은 사람이 되는 것은 아니다. 그러나 1950년 3월 3일의 날짜는 1950년 3월 3일의 다른 날짜 객체와 같기 때문에 그 사람의 생년월일은 struct가 될 것이다. 날짜 자체는 정체성이 없다.
   
   </details>
 
@@ -1830,10 +1831,10 @@ public class PeriodCondition {
 
 #### 파일은 새로운 줄로 끝나야 한다.[![SwiftLint: trailing_newline](https://img.shields.io/badge/SwiftLint-trailing__newline-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#trailing-newline)
 
-#### extension을 사용하여 코드를 논리적인 기능 block으로 나누어지도록 구성한다.
-각 extension은 // MARK: - 주석을 달아 잘 정리해야 한다.
+#### `extension`을 사용하여 코드를 논리적인 기능 block으로 나누어지도록 구성한다.
+각 `extension`은 `// MARK: -` 주석을 달아 잘 정리해야 한다.
 
-#### 별도의 extension으로 protocol 준수를 추가한다. 
+#### 별도의 `extension`으로 `protocol` 준수를 추가한다. 
 
   <details>
 
@@ -1849,13 +1850,15 @@ public class PeriodCondition {
   }
 
   // MARK: - UITableViewDataSource
+  
   extension MyViewController: UITableViewDataSource {
    // table view data source methods
    }
 
   // MARK: - UIScrollViewDelegate
+  
   extension MyViewController: UIScrollViewDelegate {
-  // scroll view delegate methods
+    // scroll view delegate methods
   }
   ```
 
@@ -1869,7 +1872,7 @@ public class PeriodCondition {
 
 </details>
 
-#### import 하는 모듈은 알파벳 순으로 정렬한다.[![SwiftFormat: sortedImports](https://img.shields.io/badge/SwiftFormat-sortedImports-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#sortedImports)
+#### `import` 하는 모듈은 알파벳 순으로 정렬한다.[![SwiftFormat: sortedImports](https://img.shields.io/badge/SwiftFormat-sortedImports-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#sortedImports)
 내장 모듈을 먼저 놓고, 빈 줄로 구분하여 서드파티를 추가한다. header comment 다음에 한 줄을 띄우고 첫 import 문을 시작한다. 이외에는 import 문 사이에 빈 줄을 추가하지 않는다.  
 
 
@@ -1893,7 +1896,7 @@ standard organization 방법을 통해 파일이 어떤 모듈에 의존하는�
   ```
   </details>
 
-  _예외: `@testable`은 일반적인 import 문 뒤에 위치하고 빈 줄로 구분해야 한다._
+  _예외: `@testable`은 일반적인 `import` 문 뒤에 위치하고 빈 줄로 구분해야 한다._
 
   <details>
 
