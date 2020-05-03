@@ -64,6 +64,8 @@
 
 <details>
 
+예를 들어 ‘// MARK: …’  또는  ‘// MARK: - …’ 형식을 사용한다. 
+
  좋은 예:
 
  ```swift
@@ -863,7 +865,7 @@ someAsyncThing() { argument1, argument2, argument3 in
 
    ```swift
   UIView.animate(withDuration: 1.0) {
-    self.myView.alpha = 0
+  self.myView.alpha = 0
   }
 
   UIView.animate(withDuration: 1.0, animations: {
@@ -1715,28 +1717,20 @@ _예외: 디미터법칙은 하나의 점을 강제하는 규칙이 아니다_
 좋은 예:
 
  ```swift
-struct Movie {
-  var isDiscountable: Bool {
-    true
-  }
-  
-  var discountAmount: Int {
-    3000
-  }
-  
-  var fee: Int {
-    10000
-  }
+public struct Movie {
+    private(set) isDiscountable: Bool
+    private(set) discountAmount: Int
+    private(set) fee: Int
 }
 ```
 
 나쁜 예:
 
  ```swift
-struct Movie {
-  var isDiscountable: Bool = true
-  var discountAmount: Int = 3000
-  var fee: Int = 10000
+public struct Movie2 {
+  var isDiscountable: Bool
+  var discountAmount: Int
+  var fee: Int
 }
 ```
 
