@@ -1,0 +1,136 @@
+# 기본적으로 알파벳 순서대로 정렬한다.
+
+# 린트 과정에서 무시할 파일 경로
+excluded:
+  - Carthage
+  - fastlane
+  - frameworks
+  - Pods
+  
+# 기본적으로 비활성화 되어있는 규칙을 활성화
+opt_in_rules:
+    - convenience_type
+    - implicitly_unwrapped_optional
+    - multiline_arguments
+    - multiline_arguments_brackets
+    - multiline_parameters
+    - multiline_parameters_brackets
+    - trailing_closure
+    # 자동 수정되는 규칙
+    - closure_spacing
+    - empty_parameters
+    - implicit_return
+    - legacy_constructor
+    - operator_usage_whitespace
+    - redundant_type_annotation
+    - return_arrow_whitespace
+    - syntactic_sugar
+    #- trailing_newline //Xcode에서 자동으로 추가
+    #- trailing_whitespace //Xcode에서 설정하면 자동 수정됨
+    - unneeded_parentheses_in_closure_argument
+    - unused_closure_parameter
+    - vertical_whitespace
+    - void_return
+    
+# 기본적으로 활성화 되어있는 규칙을 비활성화
+disabled_rules:
+  - block_based_kvo
+  - class_delegate_protocol
+  - closure_parameter_position
+  - compiler_protocol_init
+  - custom_rules
+  - cyclomatic_complexity
+  - deployment_target
+  - discarded_notification_center_observer
+  - discouraged_direct_init
+  - duplicate_enum_cases
+  - duplicate_imports
+  - dynamic_inline
+  - file_length
+  - for_where
+  - force_cast
+  - force_try
+  - function_body_length
+  - function_parameter_count
+  - generic_type_name
+  - inert_defer
+  - is_disjoint
+  - legacy_hashing
+  - nesting
+  - no_fallthrough_only
+  - notification_center_detachment
+  - nsobject_prefer_isequal
+  - operator_whitespace
+  - private_unit_test
+  - reduce_boolean
+  - redundant_set_access_control
+  - shorthand_operator
+  - superfluous_disable_command
+  - switch_case_alignment
+  - syntactic_sugar
+  - todo
+  - type_body_length
+  - unneeded_break_in_switch
+  - unused_capture_list
+  - unused_enumerated
+  - unused_setter_value
+  - valid_ibinspectable
+  - vertical_parameter_alignment
+  - weak_delegate
+  - xctfail_message
+  # 원티드 가이드: 비활성화되면 안됨
+  #  - control_statement
+  #  - identifier_name
+  #  - implicit_getter
+  #  - large_tuple
+  #  - line_length
+  #  - multiple_closures_with_trailing_closure
+  #  - redundant_string_enum_value
+  #  - type_name
+  #  - unused_optional_binding
+  
+  # 자동 수정되는 규칙
+  - closing_brace
+  - comma
+  - empty_enum_arguments
+  - empty_parameters
+  - leading_whitespace
+  - legacy_cggeometry_functions
+  - legacy_constant
+  - legacy_constructor
+  - legacy_nsgeometry_functions
+  - opening_brace
+  - private_over_fileprivate
+  - protocol_property_accessors_order
+  - redundant_discardable_let
+  - redundant_objc_attribute
+  - redundant_optional_initialization
+  - redundant_void_return
+  - return_arrow_whitespace
+  - statement_position
+  - trailing_comma
+  - trailing_newline
+  - trailing_semicolon
+  - trailing_whitespace
+  - unused_closure_parameter
+  - unused_control_flow_label
+  - vertical_whitespace
+  - void_return
+  # 원티드 가이드: 비활성화되면 안됨
+  #  - colon
+  #  - empty_parentheses_with_trailing_closure
+  #  - mark
+
+# 개별적으로 룰 커스터마이징
+identifier_name:
+  min_length: 1
+  max_length: 60
+  allowed_symbols: [_]
+
+large_tuple:
+  warning: 3
+  error: 4
+
+line_length:
+  warning: 100
+  error: 100

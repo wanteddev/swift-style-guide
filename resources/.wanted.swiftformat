@@ -1,0 +1,42 @@
+# 기본적으로 알파벳 순서대로 정렬한다.
+
+# options
+--closingparen balanced # wrapArguments
+--importgrouping testable-bottom # sortedImports
+--maxwidth 100
+--wraparguments before-first # wrapArguments
+--wrapcollections before-first # wrapArguments 
+--wrapparameters before-first # wrapArguments
+
+--swiftversion 5.1
+
+--exclude Carthage,fastlane,frameworks,Pods
+
+# enable
+--enable blankLinesAtEndOfScope
+--enable blankLinesAtStartOfScope
+--enable blankLinesBetweenScopes
+--enable braces
+--enable consecutiveBlankLines
+--enable consecutiveSpaces
+--enable duplicateImports
+--enable elseOnSameLine
+--enable emptyBraces
+--enable leadingDelimiters
+--enable redundantExtensionACL
+--enable redundantGet
+--enable redundantParens
+--enable redundantReturn
+--enable redundantSelf
+--enable redundantVoidReturnType
+--enable sortedImports
+--enable spaceInsideBraces
+--enable specifiers
+--enable strongifiedSelf
+--enable todos
+--enable trailingClosures
+--enable typeSugar
+--enable void
+--enable unusedArguments
+--enable wrap
+--enable wraparguments
