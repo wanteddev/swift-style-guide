@@ -44,9 +44,9 @@
 
 ### Basic Code Layout
 
-#### 한 줄은 최대 100자를 넘지 않아야한다.[![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash)
+#### 한 줄은 최대 100자를 넘지 않아야한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash) [![SwiftLint:line_length ](https://img.shields.io/badge/SwiftLint-line__length-00B588)](https://realm.github.io/SwiftLint/line_length.html) [![SwiftFormat: wrap](https://img.shields.io/badge/SwiftFormat-wrap-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wrap)
 
-#### 들여쓰기에는 4개의 space를 사용한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash)
+#### 들여쓰기에는 4개의 space를 사용한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash) 
 
   <details>
 
@@ -58,9 +58,9 @@
 
   </details>
 
-#### 줄 끝에는 공백을 제거해야한다.[![SwiftFormat: trailingSpace](https://img.shields.io/badge/SwiftFormat-trailingSpace-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingSpace) [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash)
+#### 줄 끝에는 공백을 제거해야한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash) [![SwiftLint: trailing_whitespace](https://img.shields.io/badge/SwiftLint-trailing__whitespace-007A87)](https://realm.github.io/SwiftLint/trailing_whitespace.html) [![SwiftFormat: trailingSpace](https://img.shields.io/badge/SwiftFormat-trailingSpace-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingSpace)
 
-#### MARK 구문 위와 아래에는 공백을 추가한다.
+#### MARK 구문은 유효한 형식을 따르고 위와 아래에는 공백을 추가한다. [![SwiftLint: mark](https://img.shields.io/badge/SwiftLint-mark-007A87)](https://realm.github.io/SwiftLint/mark.html)  [![SwiftFormat: blankLinesAroundMark](https://img.shields.io/badge/SwiftFormat-blankLinesAroundMark-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#blankLinesAroundMark)  [![SwiftFormat: todos](https://img.shields.io/badge/SwiftFormat-todos-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#todos) 
 
 <details>
 
@@ -84,7 +84,7 @@
 
 </details>
 
-#### 식별자 바로 뒤에  콜론 : 을 배치하고 그 뒤에 공백을 넣는다.[![SwiftLint: colon](https://img.shields.io/badge/SwiftLint-colon-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#colon)
+#### 식별자 바로 뒤에  콜론 : 을 배치하고 그 뒤에 공백을 넣는다.[![SwiftLint: colon](https://img.shields.io/badge/SwiftLint-colon-007A87)](https://realm.github.io/SwiftLint/colon.html)
 
 <details>
 
@@ -112,7 +112,7 @@ class MyClass : SuperClass {
 ```
 </details>
     
-#### 가독성을 위해 리턴 화살표 양쪽에 공백을 둔다.[![SwiftLint: return_arrow_whitespace](https://img.shields.io/badge/SwiftLint-return__arrow__whitespace-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#returning-whitespace)
+#### 가독성을 위해 리턴 화살표 양쪽에 공백을 둔다.[![SwiftLint: return_arrow_whitespace](https://img.shields.io/badge/SwiftLint-return__arrow__whitespace-007A87.svg)](https://realm.github.io/SwiftLint/return_arrow_whitespace.html)
 
   <details>
 
@@ -142,9 +142,9 @@ func doSomething(completion: ()->Void) {
 
 ### Functions
 
-#### 메서드 간 빈 줄이 정확히 하나 있어야한다.
+#### 메서드 간 빈 줄이 정확히 하나 있어야한다. 
 
-#### 메서드 및 기타(if/else/switch/while/guard-else 등) 중괄호는 항상 문장과 동일한 라인에서 열렸지만 새로운 라인에서 닫힌다
+#### 메서드 및 기타(if/else/switch/while/guard-else 등) 중괄호는 항상 문장과 동일한 라인에서 열렸지만 새로운 라인에서 닫힌다. [![SwiftFormat: braces](https://img.shields.io/badge/SwiftFormat-braces-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#braces)  [![SwiftFormat: elseOnSameLine](https://img.shields.io/badge/SwiftFormat-elseOnSameLine-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#elseOnSameLine)
 
   <details>
 
@@ -177,7 +177,7 @@ func doSomething(completion: ()->Void) {
 
   </details>
 
-  _예외:   `return`, `return nil` 처럼 간단하게  `guard` 로 탈출하는 경우 한 줄로 작성한다. 단, { } 안쪽에 공백을 준다._
+  _예외:   `return`, `return nil` 처럼 간단하게  `guard` 로 탈출하는 경우 한 줄로 작성한다. 단, { } 안쪽에 공백을 준다._ [![SwiftFormat: spaceInsideBraces](https://img.shields.io/badge/SwiftFormat-spaceInsideBraces-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#spaceInsideBraces)
 
   <details>
   
@@ -198,9 +198,9 @@ func doSomething(completion: ()->Void) {
   ```
   </details>
 
-#### 메서드 내의 공백은 기능을 분리해야하지만 섹션이 너무 많으면 종종 여러 메서드로 리팩토링해야한다.
+#### 메서드 내의 공백은 기능을 분리해야 하지만 섹션이 너무 많으면 종종 여러 메서드로 리팩토링해야한다.
 
-#### 긴 signature를 가진 함수는 각 매개변수를 새 줄에 놓고, 다음 줄에 들여쓰기를 추가한다.
+#### 함수 정의 시 매개변수나 호출 시 인수는 같은 줄에 놓거나, 줄 당 하나만 있게한다. 여러 줄로 만든다면, 각각 새 줄에 놓고 들여쓰기를 추가한다. [![SwiftLint: multiline_arguments](https://img.shields.io/badge/SwiftLint-multiline__arguments-00B588)](https://realm.github.io/SwiftLint/multiline_arguments.html) [![SwiftLint: multiline_arguments_brackets](https://img.shields.io/badge/SwiftLint-multiline__arguments__brackets-00B588)](https://realm.github.io/SwiftLint/multiline_arguments_brackets.html) [![SwiftLint: multiline_parameters](https://img.shields.io/badge/SwiftLint-multiline__parameters-00B588)](https://realm.github.io/SwiftLint/multiline_parameters.html) [![SwiftLint: multiline_parameters_brackets](https://img.shields.io/badge/SwiftLint-multiline__parameters__brackets-00B588)](https://realm.github.io/SwiftLint/multiline_parameters_brackets.html) [![SwiftFormat: wraparguments](https://img.shields.io/badge/SwiftFormat-wraparguments-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wraparguments) [![SwiftFormat: wrap](https://img.shields.io/badge/SwiftFormat-wrap-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wrap)  [![SwiftFormat: trailingClosures](https://img.shields.io/badge/SwiftFormat-trailingClosures-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingClosures)
 
   <details>
 
@@ -226,7 +226,7 @@ func doSomething(completion: ()->Void) {
 
   </details>
   
-#### 함수 매개변수에 closure 가 2개 이상 존재하는 경우 내려쓰기를 한다.
+#### 함수 매개변수에 closure 가 2개 이상 존재하는 경우 내려쓰기를 한다. [![SwiftLint: multiple_closures_with_trailing_closure](https://img.shields.io/badge/SwiftLint-multiple__closures__with__trailing__closure-00B588)](https://realm.github.io/SwiftLint/multiple_closures_with_trailing_closure.html)
   
   <details>
   
@@ -244,7 +244,7 @@ func doSomething(completion: ()->Void) {
    ```
   </details>
   
-#### single-line closure는 각 중괄호 내부에 공간이 있어야 한다.[![SwiftLint: closure_spacing](https://img.shields.io/badge/SwiftLint-closure__spacing-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#closure-spacing)
+#### single-line closure는 각 중괄호 내부에 공간이 있어야 한다.[![SwiftLint: closure_spacing](https://img.shields.io/badge/SwiftLint-closure__spacing-007A87.svg)](https://realm.github.io/SwiftLint/closure_spacing.html)
 
 <details>
 
@@ -264,7 +264,7 @@ let evenSquares = numbers.filter {$0 % 2 == 0}.map {  $0 * $0  }
 
 ### Operators
 
-#### infix 연산자는 양쪽에 하나의 공간이 있어야 한다. [![SwiftLint: operator_usage_whitespace](https://img.shields.io/badge/SwiftLint-operator__usage__whitespace-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#operator-usage-whitespace)
+#### infix 연산자는 양쪽에 하나의 공간이 있어야 한다. [![SwiftLint: operator_usage_whitespace](https://img.shields.io/badge/SwiftLint-operator__usage__whitespace-007A87.svg)](https://realm.github.io/SwiftLint/operator_usage_whitespace.html)
 이 규칙은 범위 연산자에는 적용되지 않는다(예: `1...3`) 및 postfix 또는 접두사 연산자 (예: `guest?` , `-1`).
 
 <details>
@@ -303,7 +303,7 @@ _Tip: [이 스크립트](resources/xcode_settings.bash)를 실행하여 Xcode에
 
 명명은 기본적으로 [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)의 가이드를 따른다. 위 문서의 내용을 여기에 정리할 수 도 있고, 새로운 가이드라인을 추가할 수도 있다.
 
-#### 타입과 프로토콜 이름은 PascalCase를 사용하고, 그 외에는 lowerCamelCase 를 사용한다.[![SwiftLint: type_name](https://img.shields.io/badge/SwiftLint-type__name-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#type-name)
+#### 타입과 프로토콜 이름은 PascalCase를 사용하고, 그 외에는 lowerCamelCase 를 사용한다.[![SwiftLint: type_name](https://img.shields.io/badge/SwiftLint-type__name-00B588.svg)](https://realm.github.io/SwiftLint/type_name.html) [![SwiftLint: identifier_name](https://img.shields.io/badge/SwiftLint-identifier__name-00B588.svg)](https://realm.github.io/SwiftLint/identifier_name.html)
 
   <details>
 
@@ -625,8 +625,7 @@ class AIRAccount {
 
 ### Basic Style
 
-#### 쉽게 타입이 추론될 수 있다면 타입을 포함하지 않는다.
-
+#### 쉽게 타입이 추론될 수 있다면 타입을 포함하지 않는다. [![SwiftLint: redundant_type_annotation](https://img.shields.io/badge/SwiftLint-redundant__type__annotation-007A87)](https://realm.github.io/SwiftLint/redundant_type_annotation.html)
   <details>
 
   좋은 예:
@@ -733,7 +732,7 @@ class MyClass {
   </details>
 
 #### tuple 멤버의 이름을 지정하여 더욱 명확하게 표시한다.
-경험상 3개 이상의 필드가 있다면, 아마 구조체를 사용해야 할 것이다.
+경험상 3개 이상의 필드가 있다면, 아마 struct를 사용해야 할 것이다. [![SwiftLint: large_tuple](https://img.shields.io/badge/SwiftLint-large__tuple-00B588)](https://realm.github.io/SwiftLint/large_tuple.html)
   <details>
 
   좋은 예:
@@ -761,7 +760,7 @@ class MyClass {
 
   </details>
 
-#### 불필요한 괄호는 생략한다.[![SwiftFormat: redundantParens](https://img.shields.io/badge/SwiftFormat-redundantParens-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#redundantParens)
+#### 불필요한 괄호는 생략한다. [![SwiftLint: control_statement](https://img.shields.io/badge/SwiftLint-control__statement-00B588)](https://realm.github.io/SwiftLint/control_statement.html) [![SwiftLint: unneeded_parentheses_in_closure_argument](https://img.shields.io/badge/SwiftLint-unneeded__parentheses__in__closure_argument-007A87)](https://realm.github.io/SwiftLint/unneeded_parentheses_in_closure_argument.html)  [![SwiftFormat: redundantParens](https://img.shields.io/badge/SwiftFormat-redundantParens-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#redundantParens)
 
   <details>
 
@@ -785,7 +784,7 @@ let squares = userCounts.map() { $0 * $0 }
 
   </details>
 
-#### `NSRange` 등의 경우 `Make()` 함수 대신 생성자를 사용한다.[![SwiftLint: legacy_constructor](https://img.shields.io/badge/SwiftLint-legacy__constructor-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#legacy-constructor)
+#### `NSRange` 등의 경우 `Make()` 함수 대신 생성자를 사용한다.[![SwiftLint: legacy_constructor](https://img.shields.io/badge/SwiftLint-legacy__constructor-007A87.svg)](https://realm.github.io/SwiftLint/legacy_constructor.html)
 
   <details>
   
@@ -805,7 +804,7 @@ let squares = userCounts.map() { $0 * $0 }
 
 ### Closures
 
-#### 매개변수와 리턴 타입이 없는 closure 정의시에는 `() -> Void`를 사용한다.[![SwiftLint: void_return](https://img.shields.io/badge/SwiftLint-void__return-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#void-return)
+#### 매개변수와 리턴 타입이 없는 closure 정의시에는 `() -> Void`를 사용한다. [![SwiftLint: empty_parameters](https://img.shields.io/badge/SwiftLint-empty_parameters-007A87)](https://realm.github.io/SwiftLint/empty_parameters.html) [![SwiftLint: void_return](https://img.shields.io/badge/SwiftLint-void__return-007A87.svg)](https://realm.github.io/SwiftLint/void_return.html)  [![SwiftFormat: void](https://img.shields.io/badge/SwiftFormat-void-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#void)
 
   <details>
 
@@ -828,7 +827,7 @@ let squares = userCounts.map() { $0 * $0 }
 
   </details>
 
-#### 사용되지 않은 closure 매개변수의 이름을 밑줄(`_`)로 지정한다.[![SwiftLint: unused_closure_parameter](https://img.shields.io/badge/SwiftLint-unused__closure__parameter-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#unused-closure-parameter)
+#### 사용되지 않은 closure 매개변수의 이름을 밑줄(`_`)로 지정한다.[![SwiftLint: unused_closure_parameter](https://img.shields.io/badge/SwiftLint-unused__closure__parameter-007A87.svg)](https://realm.github.io/SwiftLint/unused_closure_parameter.html)
 
 <details>
 
@@ -854,8 +853,9 @@ someAsyncThing() { argument1, argument2, argument3 in
 
 </details>
 
-  #### closure 매개변수가 마지막 끝에 하나 있다면 trailing closure 구문을 사용한다.
-  둘 이상이라면 평범하게 사용한다. 
+  #### closure 매개변수가 마지막 끝에 하나 있다면 가능한 한 trailing closure 구문을 사용한다.
+  둘 이상이라면 평범하게 사용한다.  
+  [![SwiftLint: trailing_closure](https://img.shields.io/badge/SwiftLint-trailing__closure-00B588)](https://realm.github.io/SwiftLint/trailing_closure.html)  [![SwiftFormat: trailingClosures](https://img.shields.io/badge/SwiftFormat-trailingClosures-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingClosures)
 
   <details>
 
@@ -893,7 +893,7 @@ someAsyncThing() { argument1, argument2, argument3 in
 
 ### Properties
 
-#### 연산 속성이 읽기전용이라면 get 절을 생략한다.
+#### 연산 속성이 읽기전용이라면 get 절을 생략한다.  [![SwiftLint: implicit_getter](https://img.shields.io/badge/SwiftLint-implicit__getter-00B588)](https://realm.github.io/SwiftLint/implicit_getter.html)  [![SwiftFormat: redundantGet](https://img.shields.io/badge/SwiftFormat-redundantGet-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#redundantGet)
 
   <details>
 
@@ -917,8 +917,8 @@ someAsyncThing() { argument1, argument2, argument3 in
 
   </details>
 
-#### `Array<T>`와 `Dictionary<T: U>` 보다는 `[T]`, `[T: U]`를 사용한다.
- 
+#### `Array<T>`와 `Dictionary<T: U>` 보다는 `[T]`, `[T: U]`를 사용한다. [![SwiftLint: syntactic_sugar](https://img.shields.io/badge/SwiftLint-syntactic__sugar-007A87)](https://realm.github.io/SwiftLint/syntactic_sugar.html)  [![SwiftFormat: typeSugar](https://img.shields.io/badge/SwiftFormat-typeSugar-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#typeSugar)
+
  <details>
 
  
@@ -979,7 +979,7 @@ textContainer?.textLabel?.setNeedsDisplay()
 
 </details>
 
-#### 값을 사용할 필요가 없다면 옵셔널 바인딩을 사용하지 않고 nil을 체크한다.[![SwiftLint: unused_optional_binding](https://img.shields.io/badge/SwiftLint-unused_optional_binding-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#unused-optional-binding)
+#### 값을 사용할 필요가 없다면 옵셔널 바인딩을 사용하지 않고 nil을 체크한다.[![SwiftLint: unused_optional_binding](https://img.shields.io/badge/SwiftLint-unused__optional__binding-00B588.svg)](https://realm.github.io/SwiftLint/unused_optional_binding.html)
 
 <details>
 
@@ -1019,7 +1019,7 @@ if let _ = thing {
 
 ### Basic Patterns
 
-#### 강제 언랩핑 옵션을 사용하지 않고 가능하면 `init` 타임에 속성을 초기화하는 것을 선호한다.[![SwiftLint: implicitly_unwrapped_optional](https://img.shields.io/badge/SwiftLint-implicitly__unwrapped__optional-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#implicitly-unwrapped-optional)
+#### 강제 언랩핑 옵션을 사용하지 않고 가능하면 `init` 타임에 속성을 초기화하는 것을 선호한다.[![SwiftLint: implicitly_unwrapped_optional](https://img.shields.io/badge/SwiftLint-implicitly__unwrapped__optional-00B588.svg)](https://realm.github.io/SwiftLint/implicitly_unwrapped_optional.html)
 두드러진 예외는 UIViewController의 `view` 속성이다.
 
   <details>
@@ -1054,7 +1054,7 @@ class MyClass: NSObject {
 
   </details>
 
-#### `init()`에서 의미 있는 작업이나 시간을  time-intensive 작업을 수행하는 것을 피한다. 
+#### `init()`에서 의미 있는 작업이나 time-intensive 작업을 수행하는 것을 피한다. 
 데이터베이스 연결 열기, 네트워크 요청, 디스크에서 대량의 데이터 읽기 등의 작업을 수행하지 않는다. 객체를 사용할 준비가 되기 전에 이러한 작업을 수행해야 하는 경우 `start()` 메서드과 같은 것을 만든다.
 
 #### 복잡한 속성 observers를 메소드로 추출한다.
@@ -1230,7 +1230,7 @@ class MyClass {
 
 그런 행동이 필요하지 않는 한 `open`보다는 `public`, `fileprivate`보다는 `private` 쪽을 선호한다.
 
-#### 접근제어 지정자가 맨 앞에 놓이게 한다.
+#### 접근 제어 지정자가 맨 앞에 놓이게 한다.  [![SwiftFormat: specifiers](https://img.shields.io/badge/SwiftFormat-specifiers-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#specifiers)
 
 <details>
 
@@ -1254,8 +1254,8 @@ class TimeMachine {
 
 _예외: `static` 지정자나  `@IBAction`, `@IBOutlet`, `@discardableResult` 같은 attributes_
 
-#### 최상위 수준 타입, 함수, 변수에 명시적으로 접근 제어를 지정한다.
-하지만, 타입 정의 내에서는 같은 수준의 접근제어를 생략한다. 
+#### 최상위 수준 타입, 함수, 변수에 명시적으로 접근 제어를 지정한다. 
+하지만, 타입 정의 내에서는 같은 수준의 접근제어를 생략한다.  [![SwiftFormat: redundantExtensionACL](https://img.shields.io/badge/SwiftFormat-redundantExtensionACL-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#redundantExtensionACL)
 
 <details>
 
@@ -1356,8 +1356,7 @@ func jump(person: Person) {
   </details>
 
 #### `public` 또는 `internal` 상수 및 함수를 네임스페이스로 묶고 싶을 때는 `case` 없는 `enum`을 사용한다.
-네임스페이스 없이 전역 상수와 함수를 만들지 않는다. 명료함을 위해서라면 네임스페이스를 제한없이 중첩한다. 
-  
+네임스페이스 없이 전역 상수와 함수를 만들지 않는다. 명료함을 위해서라면 네임스페이스를 제한없이 중첩한다.  [![SwiftLint: convenience_type](https://img.shields.io/badge/SwiftLint-convenience__type-00B588)](https://realm.github.io/SwiftLint/convenience_type.html)
   <details>
 
   ##### 왜?
@@ -1381,7 +1380,7 @@ func jump(person: Person) {
 
   </details>
 
-#### 외부 소스로 부터 매핑되는 경우가 아니라면, Swift의 자동으로 매겨지는 enum 값을  그대로 사용한다.[![SwiftLint: redundant_string_enum_value](https://img.shields.io/badge/SwiftLint-redundant__string__enum__value-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#redundant-string-enum-value)
+#### 외부 소스로 부터 매핑되는 경우가 아니라면, Swift의 자동으로 매겨지는 enum 값을  그대로 사용한다.[![SwiftLint: redundant_string_enum_value](https://img.shields.io/badge/SwiftLint-redundant__string__enum__value-00B588.svg)](https://realm.github.io/SwiftLint/redundant_string_enum_value.html)
 값을 명시적으로 할당한다면 그 이유를 설명하는 comment를 추가한다. 
 
   <details>
@@ -1497,7 +1496,7 @@ for element in input {
   </details>
 
 #### Type method는 기본적으로  `static` 으로 정의한다.
-메소드를 재정의해야하는 경우에는 `class` 키워드를 사용합니다.
+메소드를 재정의해야하는 경우에는 `class` 키워드를 사용한다.
 
   <details>  
 
@@ -1520,7 +1519,7 @@ class Fruit {
   </details>
 
 #### 클래스는 기본적으로 `final`로 정의한다.
-클래스를 재정의해야하는 경우에는 `final` 키워드를 생략합니다.
+클래스를 재정의해야하는 경우에는 `final` 키워드를 생략한다.
 
 <details>
 
@@ -1582,7 +1581,7 @@ default:
 
   </details>
 
-#### 언어에서 필요하지 않은 경우 `return` 키워드를 생략한다.[![SwiftFormat: redundantReturn](https://img.shields.io/badge/SwiftFormat-redundantReturn-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#redundantReturn)
+#### 언어에서 필요하지 않은 경우 `return` 키워드를 생략한다. [![SwiftLint: implicit_return](https://img.shields.io/badge/SwiftLint-implicit__return-007A87)](https://realm.github.io/SwiftLint/implicit_return.html) [![SwiftFormat: redundantReturn](https://img.shields.io/badge/SwiftFormat-redundantReturn-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#redundantReturn)
 
   <details>
   
@@ -1819,11 +1818,11 @@ public class PeriodCondition {
 **[⬆ back to top](#table-of-contents)**
 
 ## File Organization
+#### 빈 줄은 한 줄로 제한한다. [![SwiftLint: vertical_whitespace](https://img.shields.io/badge/SwiftLint-vertical__whitespace-007A87.svg)](https://realm.github.io/SwiftLint/vertical_whitespace.html)  [![SwiftFormat: blankLinesBetweenScopes](https://img.shields.io/badge/SwiftFormat-blankLinesBetweenScopes-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#blankLinesBetweenScopes)
 
-#### 빈 줄은 한 줄로 제한한다. [![SwiftLint: vertical_whitespace](https://img.shields.io/badge/SwiftLint-vertical__whitespace-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#vertical-whitespace)
-파일을 논리 그룹으로 나누기 위해 높이가 다른 빈 줄보다는 다음 포맷팅 가이드라인을 선호한다.
+파일을 논리 그룹으로 나누기 위해 높이가 다른 빈 줄보다는 이러한 포맷팅 가이드라인을 선호한다.
 
-#### 파일은 새로운 줄로 끝나야 한다.[![SwiftLint: trailing_newline](https://img.shields.io/badge/SwiftLint-trailing__newline-007A87.svg)](https://github.com/realm/SwiftLint/blob/master/Rules.md#trailing-newline)
+#### 파일은 새로운 줄로 끝나야 한다. [![SwiftLint: trailing_newline](https://img.shields.io/badge/SwiftLint-trailing__newline-007A87.svg)](https://realm.github.io/SwiftLint/trailing_newline.html) 
 
 #### `extension`을 사용하여 코드를 논리적인 기능 block으로 나누어지도록 구성한다.
 각 `extension`은 `// MARK: -` 주석을 달아 잘 정리해야 한다.
@@ -1834,7 +1833,7 @@ public class PeriodCondition {
 
   ##### 왜?
 
-  관련 메서드가 프로토콜과 함께 그룹화되어 유지되며 관련 메서드를 찾기가 더 쉽고 유지보수가 용이합니다. 
+관련 메서드가 프로토콜과 함께 그룹화되어 유지되며 관련 메서드를 찾기가 더 쉽고 유지보수가 용이하다.
 
   좋은 예:
 
@@ -1866,10 +1865,8 @@ public class PeriodCondition {
 
 </details>
 
-#### `import` 하는 모듈은 알파벳 순으로 정렬한다.[![SwiftFormat: sortedImports](https://img.shields.io/badge/SwiftFormat-sortedImports-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#sortedImports)
+#### `import` 하는 모듈은 알파벳 순으로 정렬한다.[![SwiftFormat: sortedImports](https://img.shields.io/badge/SwiftFormat-sortedImports-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#sortedImports) 
 내장 모듈을 먼저 놓고, 빈 줄로 구분하여 서드파티를 추가한다. header comment 다음에 한 줄을 띄우고 첫 import 문을 시작한다. 이외에는 import 문 사이에 빈 줄을 추가하지 않는다.  
-
-
   
   <details>
 
@@ -1953,3 +1950,7 @@ import Quick
 [StyleShare Swift Style Guide](https://github.com/StyleShare/swift-style-guide)
 
 오브젝트 by 조영호   
+
+[SwiftLint Rules](https://realm.github.io/SwiftLint/rule-directory.html)
+
+[SwiftFormater Rules](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md)
