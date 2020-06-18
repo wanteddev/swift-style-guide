@@ -50,11 +50,7 @@
 
   <details>
 
-  ##### 왜?
-
-  공간을 절약하고 줄 바꿈을 방지하려면 탭 대신 4개의 공백을 사용하여 들여쓴다.
-
-   Tip:  일부 코드 또는 모두 선택(Command-A)한 다음 Control-I(또는 편집기 ▸ Structure ▸ Re-Indent)를 선택하여 들여쓰기를 다시 할 수 있다. 일부 Xcode 템플릿 코드는 4-space 탭으로 하드코딩되므로 이를 수정하는 것이 좋다.
+Tip:  일부 코드 또는 모두 선택(Command-A)한 다음 Control-I(또는 편집기 ▸ Structure ▸ Re-Indent)를 선택하여 들여쓰기를 다시 할 수 있다.
 
   </details>
 
