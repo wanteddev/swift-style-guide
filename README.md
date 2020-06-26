@@ -15,7 +15,7 @@
 
 * 본 가이드에 없는 가이드라인은 아래를 따른다.
     * [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
-    * [![Swift:5.1](https://img.shields.io/badge/Swift-5.1-orange)]()
+    * [![Swift:5.2](https://img.shields.io/badge/Swift-5.2-orange)]()
 * 모든 규칙을 구체화하기 위해 노력한다.
 * 예외사항은 거의 두지 않아야 하고, 있더라도 정당성이 높아야한다. 
 * develop브랜치에서 가이드를 수정하고 master로  PR을 보내서 리뷰를 통과하면 반영한다. 
@@ -44,17 +44,13 @@
 
 ### Basic Code Layout
 
-#### 한 줄은 최대 100자를 넘지 않아야한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash) [![SwiftLint:line_length ](https://img.shields.io/badge/SwiftLint-line__length-00B588)](https://realm.github.io/SwiftLint/line_length.html) [![SwiftFormat: wrap](https://img.shields.io/badge/SwiftFormat-wrap-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wrap)
+#### 한 줄은 최대 110자를 넘지 않아야한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash) [![SwiftLint:line_length ](https://img.shields.io/badge/SwiftLint-line__length-00B588)](https://realm.github.io/SwiftLint/line_length.html) [![SwiftFormat: wrap](https://img.shields.io/badge/SwiftFormat-wrap-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wrap)
 
 #### 들여쓰기에는 4개의 space를 사용한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash) 
 
   <details>
 
-  ##### 왜?
-
-  공간을 절약하고 줄 바꿈을 방지하려면 탭 대신 4개의 공백을 사용하여 들여쓴다.
-
-   Tip:  일부 코드 또는 모두 선택(Command-A)한 다음 Control-I(또는 편집기 ▸ Structure ▸ Re-Indent)를 선택하여 들여쓰기를 다시 할 수 있다. 일부 Xcode 템플릿 코드는 4-space 탭으로 하드코딩되므로 이를 수정하는 것이 좋다.
+Tip:  일부 코드 또는 모두 선택(Command-A)한 다음 Control-I(또는 편집기 ▸ Structure ▸ Re-Indent)를 선택하여 들여쓰기를 다시 할 수 있다.
 
   </details>
 
