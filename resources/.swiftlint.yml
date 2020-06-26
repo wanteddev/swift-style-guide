@@ -132,5 +132,5 @@ large_tuple:
   error: 4
 
 line_length:
-  warning: 100
-  error: 100
+  warning: 110
+  error: 110
