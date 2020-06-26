@@ -1,42 +1,42 @@
 # 기본적으로 알파벳 순서대로 정렬한다.
 
 # options
---closingparen balanced # wrapArguments
 --importgrouping testable-bottom # sortedImports
---maxwidth 100
+--maxwidth 110
+--closingparen balanced # wrapArguments
 --wraparguments before-first # wrapArguments
---wrapcollections before-first # wrapArguments 
+--wrapcollections before-first # wrapArguments
 --wrapparameters before-first # wrapArguments
 
---swiftversion 5.1
+--swiftversion 5.2
 
 --exclude Carthage,fastlane,frameworks,Pods
 
-# enable
---enable blankLinesAtEndOfScope
---enable blankLinesAtStartOfScope
---enable blankLinesBetweenScopes
---enable braces
---enable consecutiveBlankLines
---enable consecutiveSpaces
---enable duplicateImports
---enable elseOnSameLine
---enable emptyBraces
---enable leadingDelimiters
---enable redundantExtensionACL
---enable redundantGet
---enable redundantParens
---enable redundantReturn
---enable redundantSelf
---enable redundantVoidReturnType
---enable sortedImports
---enable spaceInsideBraces
---enable specifiers
---enable strongifiedSelf
---enable todos
---enable trailingClosures
---enable typeSugar
---enable void
---enable unusedArguments
---enable wrap
---enable wraparguments
+# --rules를 사용하면 나머지규칙은 비활성화된다고 함
+--rules blankLinesAtEndOfScope
+--rules blankLinesAtStartOfScope
+--rules blankLinesBetweenScopes
+--rules braces
+--rules consecutiveBlankLines
+--rules consecutiveSpaces
+--rules duplicateImports
+--rules elseOnSameLine
+--rules emptyBraces
+--rules leadingDelimiters
+--rules redundantExtensionACL
+--rules redundantGet
+--rules redundantParens
+--rules redundantReturn
+--rules redundantSelf
+--rules redundantVoidReturnType
+--rules sortedImports
+--rules spaceInsideBraces
+--rules specifiers
+--rules strongifiedSelf
+--rules todos
+--rules trailingClosures
+--rules typeSugar
+--rules void
+--rules unusedArguments
+--rules wrap
+--rules wraparguments
