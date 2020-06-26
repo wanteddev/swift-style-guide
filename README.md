@@ -44,7 +44,7 @@
 
 ### Basic Code Layout
 
-#### 한 줄은 최대 100자를 넘지 않아야한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash) [![SwiftLint:line_length ](https://img.shields.io/badge/SwiftLint-line__length-00B588)](https://realm.github.io/SwiftLint/line_length.html) [![SwiftFormat: wrap](https://img.shields.io/badge/SwiftFormat-wrap-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wrap)
+#### 한 줄은 최대 110자를 넘지 않아야한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash) [![SwiftLint:line_length ](https://img.shields.io/badge/SwiftLint-line__length-00B588)](https://realm.github.io/SwiftLint/line_length.html) [![SwiftFormat: wrap](https://img.shields.io/badge/SwiftFormat-wrap-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wrap)
 
 #### 들여쓰기에는 4개의 space를 사용한다. [![Script:Xcode](https://img.shields.io/badge/Script-Xcode-blue)](resources/xcode_settings.bash) 
 
