@@ -2,13 +2,13 @@
 # 기본적으로 알파벳 순서대로 정렬한다.
 
 whitelist_rules:
-  ### opt_in_rules
+  ######## opt_in_rules ########
   - convenience_type
   #- implicitly_unwrapped_optional #wantedTests에서는 비활성화
   - multiline_arguments
   - multiline_parameters
   #- trailing_closure #비활성화
-  # 자동 수정되는 규칙
+  ## 자동 수정되는 규칙
   - closure_spacing
   - empty_parameters
   - implicit_return
@@ -22,17 +22,18 @@ whitelist_rules:
   - unused_closure_parameter
   - vertical_whitespace
   - void_return
-  ### disabled_rules
+  ######## disabled_rules & 디폴트로 활성화되는 규칙들 ########
   - control_statement
   - identifier_name
   - implicit_getter
   - large_tuple
+  - legacy_constructor
   #- line_length #wantedTests에서는 비활성화
   - multiple_closures_with_trailing_closure
   #- redundant_string_enum_value #비활성화
   - type_name
   - unused_optional_binding
-  # 자동 수정되는 규칙
+  ## 자동 수정되는 규칙
   - colon
   - empty_parentheses_with_trailing_closure
   - mark
