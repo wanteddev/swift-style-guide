@@ -1452,6 +1452,7 @@ enum ErrorCode: Int {
   case timeOut
 }
 ```
+_예외: Codable을 준수하는 타입의 경우 내부의 enum case에서는 명시적인 값을 정의한다_
 
   </details>
 
