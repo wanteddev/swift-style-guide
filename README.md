@@ -1,4 +1,4 @@
-# Wantedlab Swift Style Guide
+# Wanted Lab Swift Style Guide
 
 ## 목표
 
@@ -196,7 +196,7 @@ func doSomething(completion: ()->Void) {
 
 #### 메서드 내의 공백은 기능을 분리해야 하지만 섹션이 너무 많으면 종종 여러 메서드로 리팩토링해야한다.
 
-#### 함수 정의 시 매개변수나 호출 시 인수는 같은 줄에 놓거나, 줄 당 하나만 있게한다. 여러 줄로 만든다면, 각각 새 줄에 놓고 들여쓰기를 추가한다. [![SwiftLint: multiline_arguments](https://img.shields.io/badge/SwiftLint-multiline__arguments-00B588)](https://realm.github.io/SwiftLint/multiline_arguments.html) [![SwiftLint: multiline_arguments_brackets](https://img.shields.io/badge/SwiftLint-multiline__arguments__brackets-00B588)](https://realm.github.io/SwiftLint/multiline_arguments_brackets.html) [![SwiftLint: multiline_parameters](https://img.shields.io/badge/SwiftLint-multiline__parameters-00B588)](https://realm.github.io/SwiftLint/multiline_parameters.html) [![SwiftLint: multiline_parameters_brackets](https://img.shields.io/badge/SwiftLint-multiline__parameters__brackets-00B588)](https://realm.github.io/SwiftLint/multiline_parameters_brackets.html) [![SwiftFormat: wraparguments](https://img.shields.io/badge/SwiftFormat-wraparguments-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wraparguments) [![SwiftFormat: wrap](https://img.shields.io/badge/SwiftFormat-wrap-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wrap)  [![SwiftFormat: trailingClosures](https://img.shields.io/badge/SwiftFormat-trailingClosures-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingClosures)
+#### 함수 정의 시 매개변수나 호출 시 인수는 같은 줄에 놓거나, 줄 당 하나만 있게한다. 여러 줄로 만든다면, 각각 새 줄에 놓고 들여쓰기를 추가한다. [![SwiftLint: multiline_arguments](https://img.shields.io/badge/SwiftLint-multiline__arguments-00B588)](https://realm.github.io/SwiftLint/multiline_arguments.html) [![SwiftLint: multiline_parameters](https://img.shields.io/badge/SwiftLint-multiline__parameters-00B588)](https://realm.github.io/SwiftLint/multiline_parameters.html) [![SwiftFormat: wraparguments](https://img.shields.io/badge/SwiftFormat-wraparguments-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wraparguments) [![SwiftFormat: wrap](https://img.shields.io/badge/SwiftFormat-wrap-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wrap)  [![SwiftFormat: trailingClosures](https://img.shields.io/badge/SwiftFormat-trailingClosures-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingClosures)
 
   <details>
 
@@ -850,8 +850,7 @@ someAsyncThing() { argument1, argument2, argument3 in
 </details>
 
   #### closure 매개변수가 마지막 끝에 하나 있다면 가능한 한 trailing closure 구문을 사용한다.
-  둘 이상이라면 평범하게 사용한다.  
-  [![SwiftLint: trailing_closure](https://img.shields.io/badge/SwiftLint-trailing__closure-00B588)](https://realm.github.io/SwiftLint/trailing_closure.html)  [![SwiftFormat: trailingClosures](https://img.shields.io/badge/SwiftFormat-trailingClosures-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingClosures)
+  둘 이상이라면 평범하게 사용한다. [![SwiftFormat: trailingClosures](https://img.shields.io/badge/SwiftFormat-trailingClosures-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingClosures)
 
   <details>
 
@@ -1376,7 +1375,7 @@ func jump(person: Person) {
 
   </details>
 
-#### 외부 소스로 부터 매핑되는 경우가 아니라면, Swift의 자동으로 매겨지는 enum 값을  그대로 사용한다.[![SwiftLint: redundant_string_enum_value](https://img.shields.io/badge/SwiftLint-redundant__string__enum__value-00B588.svg)](https://realm.github.io/SwiftLint/redundant_string_enum_value.html)
+#### 외부 소스로 부터 매핑되는 경우가 아니라면, Swift의 자동으로 매겨지는 enum 값을 그대로 사용한다.
 값을 명시적으로 할당한다면 그 이유를 설명하는 comment를 추가한다. 
 
   <details>
