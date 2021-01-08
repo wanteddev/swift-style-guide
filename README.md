@@ -1287,6 +1287,26 @@ public class ImageDownloader {
 
 </details>
 
+#### 접근제어는 extension뿐만 아니라 method, property에도 각각 설정한다.
+
+<details>
+
+좋은 예:
+```swift
+private extension ViewController {
+    private func setupViews() {}
+}
+```
+
+나쁜 예:
+```swift
+private extension ViewController {
+    func setupViews() {}
+}
+```
+
+</details>
+
 #### 가능한 한 전역 함수를 정의하지 않는다.
 타입 정의안에서 메서드를 정의하는 것을 선호한다.
 
@@ -1629,7 +1649,27 @@ default:
 구글링으로 여러 번역본을 찾을 수 있습니다.
 
 </details>
-  
+
+#### return 되는 값만 필요한 메소드는 Computed property로 정의한다.
+
+<details>
+
+좋은 예:
+```swift
+var isMember: Bool {
+    MemberManager.shared.isMember
+}
+```
+
+나쁜 예:
+```swift
+func isMember() -> Bool {
+    MemberManager.shared.isMember
+}
+```
+
+</details>
+
 ### Objects
 
 객체의 public interface를 정의할 때 따르는 가이드라인
