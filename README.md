@@ -798,6 +798,28 @@ let squares = userCounts.map() { $0 * $0 }
 
   </details>
 
+#### String은 `+`를 사용하여 연산하지 않는다.
+
+<details>
+
+좋은 예:
+
+ ```swift
+ let firstName = "김"
+ let secondName = "티드"
+ let wholeName = "\(firstName)\(secondName)"
+```
+
+나쁜 예:
+
+ ```swift
+ let firstName = "김"
+ let secondName = "티드"
+ let wholeName = firstName+secondName
+ ```
+
+</details>
+
 ### Closures
 
 #### 매개변수와 리턴 타입이 없는 closure 정의시에는 `() -> Void`를 사용한다. [![SwiftLint: empty_parameters](https://img.shields.io/badge/SwiftLint-empty_parameters-007A87)](https://realm.github.io/SwiftLint/empty_parameters.html) [![SwiftLint: void_return](https://img.shields.io/badge/SwiftLint-void__return-007A87.svg)](https://realm.github.io/SwiftLint/void_return.html)  [![SwiftFormat: void](https://img.shields.io/badge/SwiftFormat-void-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#void)
