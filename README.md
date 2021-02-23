@@ -1672,7 +1672,7 @@ default:
 
 </details>
 
-#### return 되는 값만 필요한 메소드는 Computed property로 정의한다.
+#### return 되는 값만 필요한 메소드는 Computed property(연산 프로퍼티)로 정의한다.
 
 <details>
 
