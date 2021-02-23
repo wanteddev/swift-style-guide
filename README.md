@@ -800,6 +800,8 @@ let squares = userCounts.map() { $0 * $0 }
 
 #### String은 `+`를 사용하여 연산하지 않는다.
 
+컴파일 시간에 영향을 주는 주요 원인이므로 지양한다.
+
 <details>
 
 좋은 예:
