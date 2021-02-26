@@ -798,6 +798,32 @@ let squares = userCounts.map() { $0 * $0 }
 
   </details>
 
+#### String은 `+`를 사용하여 연산하지 않는다.
+
+<details>
+
+##### 왜?
+
+컴파일 시간에 영향을 주는 주요 원인이므로 지양한다.
+
+좋은 예:
+
+ ```swift
+ let firstName = "김"
+ let secondName = "티드"
+ let wholeName = "\(firstName)\(secondName)"
+```
+
+나쁜 예:
+
+ ```swift
+ let firstName = "김"
+ let secondName = "티드"
+ let wholeName = firstName+secondName
+ ```
+
+</details>
+
 ### Closures
 
 #### 매개변수와 리턴 타입이 없는 closure 정의시에는 `() -> Void`를 사용한다. [![SwiftLint: empty_parameters](https://img.shields.io/badge/SwiftLint-empty_parameters-007A87)](https://realm.github.io/SwiftLint/empty_parameters.html) [![SwiftLint: void_return](https://img.shields.io/badge/SwiftLint-void__return-007A87.svg)](https://realm.github.io/SwiftLint/void_return.html)  [![SwiftFormat: void](https://img.shields.io/badge/SwiftFormat-void-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#void)
@@ -1287,6 +1313,26 @@ public class ImageDownloader {
 
 </details>
 
+#### 접근제어는 extension뿐만 아니라 method, property에도 각각 설정한다.
+
+<details>
+
+좋은 예:
+```swift
+private extension ViewController {
+    private func setupViews() {}
+}
+```
+
+나쁜 예:
+```swift
+private extension ViewController {
+    func setupViews() {}
+}
+```
+
+</details>
+
 #### 가능한 한 전역 함수를 정의하지 않는다.
 타입 정의안에서 메서드를 정의하는 것을 선호한다.
 
@@ -1629,7 +1675,27 @@ default:
 구글링으로 여러 번역본을 찾을 수 있습니다.
 
 </details>
-  
+
+#### return 되는 값만 필요한 메소드는 Computed property(연산 프로퍼티)로 정의한다.
+
+<details>
+
+좋은 예:
+```swift
+var isMember: Bool {
+    MemberManager.shared.isMember
+}
+```
+
+나쁜 예:
+```swift
+func isMember() -> Bool {
+    MemberManager.shared.isMember
+}
+```
+
+</details>
+
 ### Objects
 
 객체의 public interface를 정의할 때 따르는 가이드라인
