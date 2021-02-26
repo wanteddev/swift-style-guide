@@ -1,0 +1,59 @@
+# wantedTests 디렉토리내의 파일에 적용
+# 기본적으로 알파벳 순서대로 정렬한다.
+
+whitelist_rules:
+  ######## opt_in_rules ########
+  - convenience_type
+  #- implicitly_unwrapped_optional #wantedTests에서는 비활성화
+  - multiline_arguments
+  - multiline_parameters
+  #- trailing_closure #비활성화
+  ## 자동 수정되는 규칙
+  - closure_spacing
+  - empty_parameters
+  - implicit_return
+  - operator_usage_whitespace
+  - redundant_type_annotation
+  - return_arrow_whitespace
+  - syntactic_sugar
+  #- trailing_newline #Xcode에서 자동으로 추가
+  #- trailing_whitespace #Xcode에서 설정하면 자동 수정됨
+  - unneeded_parentheses_in_closure_argument
+  - unused_closure_parameter
+  - vertical_whitespace
+  - void_return
+  ######## disabled_rules & 디폴트로 활성화되는 규칙들 ########
+  - control_statement
+  - identifier_name
+  - implicit_getter
+  - large_tuple
+  - legacy_constructor
+  #- line_length #wantedTests에서는 비활성화
+  - multiple_closures_with_trailing_closure
+  #- redundant_string_enum_value #비활성화
+  - type_name
+  - unused_optional_binding
+  ## 자동 수정되는 규칙
+  - colon
+  - empty_parentheses_with_trailing_closure
+  - mark
+  - no_space_in_method_call
+
+# 개별적으로 룰 커스터마이징
+identifier_name:
+  min_length: 1
+  max_length: 60
+  allowed_symbols: [_]
+
+large_tuple:
+  warning: 3
+  error: 4
+
+line_length:
+  warning: 110
+  error: 110
+  
+type_name:
+  min_length: 2
+  max_length: 60
+  allowed_symbols: [_]

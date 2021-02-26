@@ -1,4 +1,4 @@
-# Wantedlab Swift Style Guide
+# Wanted Lab Swift Style Guide
 
 ## 목표
 
@@ -196,7 +196,7 @@ func doSomething(completion: ()->Void) {
 
 #### 메서드 내의 공백은 기능을 분리해야 하지만 섹션이 너무 많으면 종종 여러 메서드로 리팩토링해야한다.
 
-#### 함수 정의 시 매개변수나 호출 시 인수는 같은 줄에 놓거나, 줄 당 하나만 있게한다. 여러 줄로 만든다면, 각각 새 줄에 놓고 들여쓰기를 추가한다. [![SwiftLint: multiline_arguments](https://img.shields.io/badge/SwiftLint-multiline__arguments-00B588)](https://realm.github.io/SwiftLint/multiline_arguments.html) [![SwiftLint: multiline_arguments_brackets](https://img.shields.io/badge/SwiftLint-multiline__arguments__brackets-00B588)](https://realm.github.io/SwiftLint/multiline_arguments_brackets.html) [![SwiftLint: multiline_parameters](https://img.shields.io/badge/SwiftLint-multiline__parameters-00B588)](https://realm.github.io/SwiftLint/multiline_parameters.html) [![SwiftLint: multiline_parameters_brackets](https://img.shields.io/badge/SwiftLint-multiline__parameters__brackets-00B588)](https://realm.github.io/SwiftLint/multiline_parameters_brackets.html) [![SwiftFormat: wraparguments](https://img.shields.io/badge/SwiftFormat-wraparguments-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wraparguments) [![SwiftFormat: wrap](https://img.shields.io/badge/SwiftFormat-wrap-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wrap)  [![SwiftFormat: trailingClosures](https://img.shields.io/badge/SwiftFormat-trailingClosures-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingClosures)
+#### 함수 정의 시 매개변수나 호출 시 인수는 같은 줄에 놓거나, 줄 당 하나만 있게한다. 여러 줄로 만든다면, 각각 새 줄에 놓고 들여쓰기를 추가한다. [![SwiftLint: multiline_arguments](https://img.shields.io/badge/SwiftLint-multiline__arguments-00B588)](https://realm.github.io/SwiftLint/multiline_arguments.html) [![SwiftLint: multiline_parameters](https://img.shields.io/badge/SwiftLint-multiline__parameters-00B588)](https://realm.github.io/SwiftLint/multiline_parameters.html) [![SwiftFormat: wraparguments](https://img.shields.io/badge/SwiftFormat-wraparguments-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wraparguments) [![SwiftFormat: wrap](https://img.shields.io/badge/SwiftFormat-wrap-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#wrap)  [![SwiftFormat: trailingClosures](https://img.shields.io/badge/SwiftFormat-trailingClosures-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingClosures)
 
   <details>
 
@@ -798,6 +798,32 @@ let squares = userCounts.map() { $0 * $0 }
 
   </details>
 
+#### String은 `+`를 사용하여 연산하지 않는다.
+
+<details>
+
+##### 왜?
+
+컴파일 시간에 영향을 주는 주요 원인이므로 지양한다.
+
+좋은 예:
+
+ ```swift
+ let firstName = "김"
+ let secondName = "티드"
+ let wholeName = "\(firstName)\(secondName)"
+```
+
+나쁜 예:
+
+ ```swift
+ let firstName = "김"
+ let secondName = "티드"
+ let wholeName = firstName+secondName
+ ```
+
+</details>
+
 ### Closures
 
 #### 매개변수와 리턴 타입이 없는 closure 정의시에는 `() -> Void`를 사용한다. [![SwiftLint: empty_parameters](https://img.shields.io/badge/SwiftLint-empty_parameters-007A87)](https://realm.github.io/SwiftLint/empty_parameters.html) [![SwiftLint: void_return](https://img.shields.io/badge/SwiftLint-void__return-007A87.svg)](https://realm.github.io/SwiftLint/void_return.html)  [![SwiftFormat: void](https://img.shields.io/badge/SwiftFormat-void-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#void)
@@ -850,8 +876,7 @@ someAsyncThing() { argument1, argument2, argument3 in
 </details>
 
   #### closure 매개변수가 마지막 끝에 하나 있다면 가능한 한 trailing closure 구문을 사용한다.
-  둘 이상이라면 평범하게 사용한다.  
-  [![SwiftLint: trailing_closure](https://img.shields.io/badge/SwiftLint-trailing__closure-00B588)](https://realm.github.io/SwiftLint/trailing_closure.html)  [![SwiftFormat: trailingClosures](https://img.shields.io/badge/SwiftFormat-trailingClosures-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingClosures)
+  둘 이상이라면 평범하게 사용한다. [![SwiftFormat: trailingClosures](https://img.shields.io/badge/SwiftFormat-trailingClosures-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#trailingClosures)
 
   <details>
 
@@ -1288,6 +1313,26 @@ public class ImageDownloader {
 
 </details>
 
+#### 접근제어는 extension뿐만 아니라 method, property에도 각각 설정한다.
+
+<details>
+
+좋은 예:
+```swift
+private extension ViewController {
+    private func setupViews() {}
+}
+```
+
+나쁜 예:
+```swift
+private extension ViewController {
+    func setupViews() {}
+}
+```
+
+</details>
+
 #### 가능한 한 전역 함수를 정의하지 않는다.
 타입 정의안에서 메서드를 정의하는 것을 선호한다.
 
@@ -1376,7 +1421,7 @@ func jump(person: Person) {
 
   </details>
 
-#### 외부 소스로 부터 매핑되는 경우가 아니라면, Swift의 자동으로 매겨지는 enum 값을  그대로 사용한다.[![SwiftLint: redundant_string_enum_value](https://img.shields.io/badge/SwiftLint-redundant__string__enum__value-00B588.svg)](https://realm.github.io/SwiftLint/redundant_string_enum_value.html)
+#### 외부 소스로 부터 매핑되는 경우가 아니라면, Swift의 자동으로 매겨지는 enum 값을 그대로 사용한다.
 값을 명시적으로 할당한다면 그 이유를 설명하는 comment를 추가한다. 
 
   <details>
@@ -1452,6 +1497,7 @@ enum ErrorCode: Int {
   case timeOut
 }
 ```
+_예외: Codable을 준수하는 타입의 경우 내부의 enum case에서는 명시적인 값을 정의한다_
 
   </details>
 
@@ -1629,7 +1675,27 @@ default:
 구글링으로 여러 번역본을 찾을 수 있습니다.
 
 </details>
-  
+
+#### return 되는 값만 필요한 메소드는 Computed property(연산 프로퍼티)로 정의한다.
+
+<details>
+
+좋은 예:
+```swift
+var isMember: Bool {
+    MemberManager.shared.isMember
+}
+```
+
+나쁜 예:
+```swift
+func isMember() -> Bool {
+    MemberManager.shared.isMember
+}
+```
+
+</details>
+
 ### Objects
 
 객체의 public interface를 정의할 때 따르는 가이드라인
