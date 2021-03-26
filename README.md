@@ -1623,6 +1623,41 @@ default:
 
   </details>
 
+#### `switch` 문에서 `case` 내 처리해야 할 코드가 있는 경우에는  `break` 사용하지 않는다.
+
+  <details>
+
+  ##### 왜?
+
+ `case` 내 처리해야 할 코드가 있는 경우, `case` 내에 작성된 `break`는 컴파일러에게 일만 추가 시키고, 실행되는 의미는 없는 코드가 되어버린다.
+
+좋은 예:
+
+ ```swift
+switch anEnum {
+case .a:
+  // Do something
+case .b, .c:
+  // Do something else.
+}
+```
+
+나쁜 예:
+
+ ```swift
+switch anEnum {
+case .a:
+  // Do something
+  break
+default:
+  // Do something
+  break
+}
+```
+
+  </details>
+
+
 #### 언어에서 필요하지 않은 경우 `return` 키워드를 생략한다. [![SwiftLint: implicit_return](https://img.shields.io/badge/SwiftLint-implicit__return-007A87)](https://realm.github.io/SwiftLint/implicit_return.html) [![SwiftFormat: redundantReturn](https://img.shields.io/badge/SwiftFormat-redundantReturn-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#redundantReturn)
 
   <details>
