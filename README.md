@@ -138,7 +138,43 @@ Tip:  일부 코드 또는 모두 선택(Command-A)한 다음 Control-I(또는 �
    ```
 
   </details>
+  
+* **TODO와 FIXME는 Warning을 발생시켜야 한다.**</br>
+기존의 `// TODO: `, `// FIXME: `의 문법을 준수하여 작성한다. 단, `#warning()` 키워드 안에 작성하여 강제로 Warning을 발생시킨다.
 
+  <details>
+  
+  #### 왜?
+  TODO와 FIXME를 추적하고 관리하여야 하기 때문이다.
+
+   좋은 예:
+
+    ```swift
+   func emptyFunction() {
+     #warning("// TODO: 추가 로직 작성 예정입니다")     
+   }
+   
+    #warning("// FIXME: 파라미터 명 교체 예정입니다")
+   func doSomething(complexParameterName: String) {
+     // ...
+   }
+   ```
+
+   나쁜 예:
+
+    ```swift
+   func emptyFunction() {
+     // TODO: 추가 로직 작성 예정입니다
+   }
+    
+    // 파라미터 명 교체 예정입니다
+   func doSomething(complexParameterName: String) {
+     // ...
+   }
+   ```
+
+  </details>
+  
 ### Functions
 
 * **메서드 간 빈 줄이 정확히 하나 있어야한다.**
