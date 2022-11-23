@@ -2146,7 +2146,7 @@ import Quick
 
    </details>
   
-#### extension 파일 이름은 MyType+Anything.swift 로 명명한다.
+#### extension 파일 이름은 MyType+.swift 로 명명한다.
 
    <details>
 
@@ -2157,10 +2157,10 @@ import Quick
     좋은 예:
 
     ```swift
-    AppDelegate+Additions.swift
-    UIColor+HexConversion.swift
-    UIImage+Rotation.swift
-    UIViewController+LogTracking.swift
+    AppDelegate+.swift
+    UIColor+.swift
+    UIImage+.swift
+    UIViewController+.swift
     ```
 
    </details>
