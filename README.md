@@ -2103,7 +2103,7 @@ standard organization 방법을 통해 파일이 어떤 모듈에 의존하는�
 좋은 예:
 
 ```swift
- //  Copyright © 2020 Wantedlab. All rights reserved.
+ //  Copyright © 2022 Wantedlab. All rights reserved.
  //
 
  import UIKit
@@ -2124,7 +2124,7 @@ _예외: `@testable`은 일반적인 `import` 문 뒤에 위치하고 빈 줄로
 좋은 예:
 
 ```swift
- //  Copyright © 2020 Wantedlab. All rights reserved.
+ //  Copyright © 2022 Wantedlab. All rights reserved.
  //
 
  import Nimble
@@ -2136,7 +2136,7 @@ _예외: `@testable`은 일반적인 `import` 문 뒤에 위치하고 빈 줄로
 나쁜 예:
 
 ```swift
-//  Copyright © 2020 Wantedlab. All rights reserved.
+//  Copyright © 2022 Wantedlab. All rights reserved.
 //
 
 import Nimble
