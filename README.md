@@ -16,7 +16,7 @@
 
 - 본 가이드에 없는 가이드라인은 아래를 따른다.
   - [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
-  - [![Swift:5.2](https://img.shields.io/badge/Swift-5.2-orange)]()
+  - [![Swift:5.7.1](https://img.shields.io/badge/Swift-5.7.1-orange)]()
 - 모든 규칙을 구체화하기 위해 노력한다.
 - 예외사항은 거의 두지 않아야 하고, 있더라도 정당성이 높아야한다.
 - `master` 브랜치에서 `feature` 브랜치를 만들어 가이드를 수정하고, `master` 브랜치로 PR을 보내 리뷰를 통과하면 반영시킨다.
