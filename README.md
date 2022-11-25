@@ -2034,7 +2034,7 @@
 
 #### `import` 하는 모듈은 알파벳 순으로 정렬한다.</br>
 [![SwiftFormat: sortedImports](https://img.shields.io/badge/SwiftFormat-sortedImports-7B0051.svg)](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#sortedImports)</br>
-내장 모듈을 먼저 놓고, 빈 줄로 구분하여 서드파티를 추가한다. header comment 다음에 한 줄을 띄우고 첫 import 문을 시작한다. 이외에는 import 문 사이에 빈 줄을 추가하지 않는다.  
+내장 모듈을 먼저 놓고, 빈 줄로 세컨드파티를 구분한다. 이후 추가 빈 줄로 서드파티를 구분할 수 있다. header comment 다음에 한 줄을 띄우고 첫 import 문을 시작한다. 이외에는 import 문 사이에 빈 줄을 추가하지 않는다.  
   
    <details>
 
@@ -2048,6 +2048,8 @@
     //
 
     import UIKit
+
+    import SecondParty
 
     import SnapKit
     import React
