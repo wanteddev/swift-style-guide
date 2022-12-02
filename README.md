@@ -16,7 +16,7 @@
 
 - 본 가이드에 없는 가이드라인은 아래를 따른다.
   - [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
-  - [![Swift:5.2](https://img.shields.io/badge/Swift-5.2-orange)]()
+  - [![Swift:5.7.1](https://img.shields.io/badge/Swift-5.7.1-orange)]()
 - 모든 규칙을 구체화하기 위해 노력한다.
 - 예외사항은 거의 두지 않아야 하고, 있더라도 정당성이 높아야한다.
 - `master` 브랜치에서 `feature` 브랜치를 만들어 가이드를 수정하고, `master` 브랜치로 PR을 보내 리뷰를 통과하면 반영시킨다.
@@ -2103,7 +2103,7 @@ standard organization 방법을 통해 파일이 어떤 모듈에 의존하는�
 좋은 예:
 
 ```swift
- //  Copyright © 2020 Wantedlab. All rights reserved.
+ //  Copyright © 2022 Wantedlab. All rights reserved.
  //
 
  import UIKit
@@ -2124,7 +2124,7 @@ _예외: `@testable`은 일반적인 `import` 문 뒤에 위치하고 빈 줄로
 좋은 예:
 
 ```swift
- //  Copyright © 2020 Wantedlab. All rights reserved.
+ //  Copyright © 2022 Wantedlab. All rights reserved.
  //
 
  import Nimble
@@ -2136,7 +2136,7 @@ _예외: `@testable`은 일반적인 `import` 문 뒤에 위치하고 빈 줄로
 나쁜 예:
 
 ```swift
-//  Copyright © 2020 Wantedlab. All rights reserved.
+//  Copyright © 2022 Wantedlab. All rights reserved.
 //
 
 import Nimble
@@ -2146,7 +2146,7 @@ import Quick
 
    </details>
   
-#### extension 파일 이름은 MyType+Anything.swift 로 명명한다.
+#### extension 파일 이름은 MyType+.swift 로 명명한다.
 
    <details>
 
@@ -2157,10 +2157,10 @@ import Quick
     좋은 예:
 
     ```swift
-    AppDelegate+Additions.swift
-    UIColor+HexConversion.swift
-    UIImage+Rotation.swift
-    UIViewController+LogTracking.swift
+    AppDelegate+.swift
+    UIColor+.swift
+    UIImage+.swift
+    UIViewController+.swift
     ```
 
    </details>
